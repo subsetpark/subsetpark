@@ -1,4 +1,5 @@
 Title: Thaana
+status: draft
 
 The Maldives, if you didn't know, are a small chain of islands in the Indian Ocean, off to the southwest of the southern tip of India. The language they speak there is Divehi. (This is all still background). I can't tell you much about Divehi—I think it's roughly similar to the other Indo-Aryan languages. But one thing I can tell you is that it's written in a script called [*Thaana*][1] which is very unlike its neighbors.
 
