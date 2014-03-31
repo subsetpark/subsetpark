@@ -1,4 +1,5 @@
-# Designing Tie Knots by Random Walks
+title: Designing Tie Knots by Random Walks
+date: 2014-03-25
 
 I'm a fan of [85 Ways to Tie a Tie][85], by Thomas Fink and Young Mao. It's an exploration of a mathematical model for necktie knots. I'll let them [explain][designing]:
 
@@ -6,7 +7,7 @@ I'm a fan of [85 Ways to Tie a Tie][85], by Thomas Fink and Young Mao. It's an e
 
 What this means for the likes of me is that they a) articulated, essentially, the full array of knots it's possible to tie with a necktie, and b) provided an unambiguous notation for their tying. Thus as additions to the traditional [Windsor][], [Four-in-Hand][], [Pratt][], etc. (all also notatable in the *85 Ways* system), they furnished knots like the [Plattsburgh and Cavendish][encyc]. 
 
-The Plattsburgn, for instance, can be notated thus: 
+The Plattsburgh, for instance, can be notated thus: 
 
 >  Lo Ci Ro Ci Lo Ri Co T
   
@@ -40,6 +41,8 @@ So then it makes sense for individual nodes (turns in our necktie knot) to be th
     >>> n = Node("Li")
     >>> n.get_children()
     {'Co', 'Ro'}
+
+### The Walk
 
 The next step is to actually tie the tie. Using this model a recursive function makes sense; the nodes don't care where they are in the tie so we can do the same operation in any place.
 
