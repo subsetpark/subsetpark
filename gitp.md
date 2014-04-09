@@ -160,4 +160,22 @@ And once I decide that it would be better if I didn't meddle so thoroughly with 
 9f595c8 - Initial commit (8 minutes ago)
 ```
 
-[ST]:http://www.sublimetext.com/3
+The order I did it in is not as important as the fact that they're discrete changes within the text. Literature is saved.
+
+## `gitp`
+
+I'm a big fan of git and git patch mode. So I wanted to see if I could create a frontend to patch mode (synonymous with `add -p`) that would make it slightly more accessible. I use the [SublimeGit](https://sublimegit.net/) plugin for Sublime Text, and I love being able to access git from the text editor, but I wanted to be able to stage individual hunks as well.
+
+So I made my own plugin, called [gitp](https://sublime.wbond.net/packages/gitp). It's available for install right now through the nearly-ubiquitous [Package Control][PC]. 
+
+### What it Does
+
+With `gitp` you can stage individual changes for commit, from your editor.
+
+#### Displaying Hunks
+
+First, all changed areas of your file are indicated with numbered icons in the gutter.
+![Active Hunks Screenshot]({filename}/images/hunks.png)
+
+[ST]: http://www.sublimetext.com/3
+[PC]: 
