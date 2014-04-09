@@ -1,6 +1,6 @@
 Title: Intentionality
 Date: 2012-10-04
-Status: Draft
+status: draft
 
 My girlfriend is English and, though she's lived in the States for quite some time, still uses some vocabulary 
 

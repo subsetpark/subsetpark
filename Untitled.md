@@ -1,5 +1,5 @@
 Title: Introversion
-Status: Draft
+Status: draft
 
 There's [another article][1] about introversion [on Hacker News][2] right now.
 
