@@ -1,0 +1,64 @@
+title: Posical, the Positivist Calendar for Python
+status: draft
+
+
+Let's begin 225 years ago. In the year 1789 of the conventional [Gregorian calendar](http://en.wikipedia.org/wiki/Gregorian_calendar), widespread crisis and dissent forced the Estates-General to convene in France for the first time in 175 years. Thus began the French Revolution.
+
+60 years after that, in that same nation, the philosopher [August Comte](http://en.wikipedia.org/wiki/Auguste_Comte) proposed a [calendar reform](http://en.wikipedia.org/wiki/Calendar_reform) known as the [Positivist Calendar](http://en.wikipedia.org/wiki/Positivist_Calendar).
+
+## Here Are Some of the Reasons That the Gregorian Calendar is Awful
+
+The kludginess of the commonly used Gregorian Calendar will be immediately apparent to anybody who has had to use it, which population happens to include the majority of persons living in the world today. 
+
+The inopportuneness of the scheme lies primarily in its division of months. There's the leap year thing to contend with, of course; but that's unavoidable as long as one prefers one's days 24 hours long. The months, on the other hand, are more or less unforgivable:
+
+- They're of irregular length. Not only are some 30 days long and some 31 days long, which seems (I say seems) to be unavoidable if you've decided you like a thirtyish-day-long month and you've got 365 days to give out, but one is only 28 days long. So in fact their length is more varied than it would need to be under nearly any constraint.
+
+- They're of irregular distribution. As aficionados of the [knuckle technique](http://www.wikihow.com/Memorize-How-Many-Days-Are-in-Each-Month) know, the months of the year roughly *tend* towards alternating, 30 and 31 days, but there happens to be a missing 30-day month between July and August.
+
+Secondarily we have to take issue with the distribution of weeks. They neither fit neatly into the months, leaving two or three left over for each month of the year (except, perversely, that outlier, February, which contains exactly four weeks), nor do they sit easily with the year, leaving us with 52 weeks and one lonely day for every year.
+
+These facts would seem to merit immediate and absolute rectification to nearly anybody given how inconvenient they make the very basic and very essential practice of telling time, but in fact they tend to be taken for granted by nearly everybody.
+
+## There is a Better Way, or Several
+
+Nearly everybody, of course, but August Comte, and his ilk. Msr. Comte was neither the first nor the last person to propose a more rational alternative to the calendar, but he is the one we'll be paying attention to today. 
+
+### Basic Principles for Calendar Design
+
+No matter who you are, if you decide you could do better than 16th century astronomer [Aloysius Lilius of Calabria](http://en.wikipedia.org/wiki/Aloysius_Lilius) and [Pope Gregory XII](http://en.wikipedia.org/wiki/Pope_Gregory_XIII), there are some basic mathematical truths you're contending with. Chief among them is this: 
+
+#### There are 365 days in a year (366 on leap years)
+
+Neither Gregory nor Comte nor anybody else decided on the ratio of the rotational period of the Earth to its orbital period. That one we're stuck with. This is not a number that lends itself to factorization. It has exactly two factors aside from 1 and itself: 5 and 73. This makes division difficult.
+
+Here is a secondary truth:
+
+#### There are 7 days in a week
+
+This is, of course, up for debate; in fact in a way it's significantly more trivial than the months themselves. If we decided we wanted five days in a week, say, then we'd have exactly 73 weeks in the year. Then again, 73 is prime, so our neat subdivision would have to end there.
+
+In any case the fact of a 7-day week has remained more or less unaffected by the procession of calendars in the West and it doesn't really seem up for debate. Whether it's Thursday tends to have much more of an impact on most people than whether it's March or April. Or Archimedes, as we'll see.
+
+There is however another truth that we can bear in mind as we fix the mistakes of the past:
+
+#### 364 is really, really close to 365 - they're really almost the same thing
+
+Bear with me. 
+
+Here is the neat calendrical trick, first come up with by [Hugh Jones](http://en.wikipedia.org/wiki/Hugh_Jones_(reverend)), that suddenly allows the calendar to breathe more easily in all directions. 365 mod 7 = 1, that is, there's one day left after the 52 whole weeks in a year. 364 is perfectly divisible by 7. But unlike 365, which has only a week-sized factor, 364 has a week-sized factor and a month-sized factor: 28. And, in a stroke of luck so good that one must imagine that Rev. Jones was more divinely favored than His 16th C. Holiness himself, 28 is *also* perfectly divisible by 7.
+
+What this means is that if we had only 364 days to deal with, then we could divide them into 13 equally-sized months, each of which contained 4 equally-sized weeks. Then the first of every month would be Monday, the 18th would always be Thursday, the 180th day of the year would always always be Saturday, et cetera. 
+
+Then, let us only deal with 364 days. In the Positivist Calendar, the 365th day (and 366th day on Leap Years) is not a part of any month at all, nor a day of the week. It is [*epagomenal*](http://en.wikipedia.org/wiki/Intercalation_(timekeeping)). The 365th day of a year is just the 365th of that particular year; a day set aside from the ordinary cycle before things begin again.
+
+### A Calendar for a More Rational Age
+
+So there you have it. The Positivist Calendar consists of 13 28-day months, with 1 epagomenal (or intercalary) day, two in a leap year. This means that every month is the same length, and the weekdays of every month are always the same. Finally it is *perennial*, in that the weekdays of every year are always the same.
+
+Comte's Positivist Calendar has a few extra features for added delight and interest. In a further break from the Gregorian format, he renamed all the months and days of his calendar after his own humanist pantheon. So the eighth month of the Positivist Calendar is called Dante, the sixth is Moses (not a completely irreligious choice, I'll allow), and so on. And the 10th of Dante is dedicated to Rembrandt, the 8th of Shakespeare is dedicated to [Tirso](http://en.wikipedia.org/wiki/Tirso_de_Molina), and on down the line. The epagomenal day is known simply as *The Festival of All the Dead*. 
+
+Finally: Comte set year 1 of his new calendar as the first year of the truly modern age: 1789, the first year of the Great Crisis.
+
+Thus it is that I write to you on this day, Wednesday, the 24th of Archimedes, in the Positivist year of 225, dedicated in honor of [Vitruvius](http://en.wikipedia.org/wiki/Vitruvius). 
+
