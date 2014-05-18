@@ -1,8 +1,8 @@
-title: gitp
+title: Git Patch Mode and Working With Git in Python
 date: 2014-04-08
 <!-- status: draft -->
 
-Today I deployed [gitp](https://sublime.wbond.net/packages/gitp), my first [Sublime Text][ST] plugin—and the first thing I've written for actual real-world use. 
+Today I deployed [gitp](https://sublime.wbond.net/packages/gitp), my first [Sublime Text][ST] plugin. 
 
 ## Git
 
