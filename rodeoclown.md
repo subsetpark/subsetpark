@@ -1,13 +1,13 @@
 title: The Rodeo Clown Theory of Personal Development
-status: draft
+date: 2014-05-01 18:38:37
 
 ## Prelude
 
 A year ago I didn't know what I wanted to do when I grew up. 
 
-I had been in the workforce since I came back to New York in 2005. I had never, blessedly, been out of a job for more than a few months, having working as a temp, then an administrative assistant, before putting in seven years as a computer repair technician. But even within those seven years in a stable job that required at least a modicum of skill, I knew it wasn't what I wanted to *do*, and I didn't know what what I wanted to *do* was.
+I had been in the workforce since I came back to New York in 2005. I had never, blessedly, been out of a job for more than a few months, having worked as a temp, then an administrative assistant, before putting in seven years as a computer repair technician. But even within those seven years in a stable job that required at least a modicum of skill, I knew it wasn't what I wanted to *do*, and I didn't know what what I wanted to *do* was.
 
-I had studied programming in high school, and enjoyed it. But it had fallen away and I'd formed the very sticky opinion that I simply wasn't very good at it. Wasn't good enough, anyway, to do it for a living.
+I had studied programming in high school, and enjoyed it. But it had fallen away and I’d formed the very sticky opinion that I simply wasn’t very good at it.
 
 Periodically, as I went through my twenties, I would get inklings. There would be some spark of possibility around some interest of mine: maybe I could do this! Maybe I should study manuscripts! Maybe I should be a dharma teacher! Maybe I should become an acoustic engineer!
 
@@ -29,18 +29,22 @@ If I ask you: how are you gonna live your life over the next 5 years so that at 
 
 More answers might come to mind. You could google 'Rodeo Clown'. You could find out where the nearest rodeo is and find out if you can go see a show. Not so you can wait outside for the rodeo clown to leave so he can meet you and decide he wants to make you his protege and lay out everything you need. But just because you want to raise the level of rodeo clowndom in your life.
 
-Because as it turns out, there's nearly an infinity of choices available to you in *this* moment. And you might not have the foggiest idea what it would entail to move from where you are right now to some imagined future state that you can't actually *see*—but you can investigate your current surroundings and see what's immediately available.
+Because as it turns out, there's nearly an infinity of choices available to you in *this* moment. And you might not have the foggiest idea what it would entail to move from where you are right now to some imagined future state that you can't actually *see*, but you *can* investigate your current surroundings and see what's immediately available.
 
 Once you do that a feedback loop begins. Whatever you chose to do, you have a few questions to answer: 1) did it increase the level of rodeo clowndom in your life, if only by a small amount? 2) how did that feel? You don't actually know what it's like to put on the ol' barrel and greasepaint and get chased with a bull for a couple hours on a Saturday night. So part of this process is investigation: what qualities resonate with you? What's it actually like? What changes to the picture in your head are implied by the experiences you're having? And finally, if there were moments that gave you a charge, that satisfied you, that felt right—what, in your new circumstances, has revealed itself for you to explore?
 
 One visit to the rodeo does not a clown make. But once you're there, other points of contact emerge. You make a few friends, you see a few flyers. You notice things that excite you and get you thinking, and you see some things that gross you out. None of these is the self-contained Way To Rodeo Clowning. But the next day, your nearly infinite array of choices contains more obviously rodeo-clown related paths than before. 
 
-This is hard to do. It's hard to repeatedly choose to do rather than to not do. To try something new without knowing exactly what it will be or where it will lead. Dissatisfaction and doubt have their own comforts. And there's always the familiar—which, however it sits with you, at least doesn't take any movement at all to arrive at. And then there's this constant inquiry it requires: constant interrogation and introspection, the ability to ask yourself how things feel, to take negative experience as guidance rather than the massive monolithic roadblock it feels like. 
+This is hard to do. It's hard to repeatedly choose to do rather than to not do. To try something new without knowing exactly what it will be or where it will lead. Dissatisfaction and doubt have their own comforts. And there's always the familiar—which, however it sits with you, at least doesn't take any movement at all to arrive at. And then there's the constant inquiry that the rodeo clown path of self-development requires: constant interrogation and introspection, the ability to ask yourself how things feel, to take negative experience as guidance rather than the massive monolithic roadblock it feels like. 
 
 If you're like me—and like most people, I suspect—the full path never unfolds itself at your feet. You never go to bed knowing exactly what you need to do in the next day, the next week, the next year, and the next decade to be exactly the sort of person you've decided you'd like to be. If you're like me you might never even really feel like you can make that decision. But you keep paying attention, keep engaging with all the little opportunities that *are* right in front of you, and day by day, something that you couldn't have foreseen unfolds all the same.
 
 ## Coda
 
-Today is the last day of Hacker School. Over the last three months I have found myself, miraculously, in a community of practice of nearly utopian proportions; roughly 60 people educating each other in the craft of computer programming in the belly of New York City.
+Today is the last day of Hacker School. Over the last three months I have found myself, miraculously, in a community of practice of nearly utopian proportions; roughly 70 people educating each other in the craft of computer programming in the belly of New York City.
 
-A year ago I didn't know what I wanted to do when I grew up. Today I know. And when I think, *what do I have to do to become that sort of person?* the response is mostly static. But somehow, not very much through my own ingenuity, I have filled my life with what I want to do, and among the 60 people alongside whom I've struggled and overcaffeinated this spring, and the 300 or so that make up the greater community of Hacker Schoolers in the world, there are collaborators, colleagues and teachers I couldn't possibly know about yet. Faced with futures that are unknowable, we put one foot in front of the other and pick up whatever's right in front of us.
+A year ago I didn't know what I wanted to do when I grew up. Today I have at least a couple ideas. I'd like to write computer programs! What kind of programs? And where? Do I want to write frontend or backend? Who will give me the best job? Where should I be applying?
+
+Who do I want to be when I grow up and what path should I pick to become him? The response is mostly static. But somehow, not very much through my own ingenuity, I have begun to fill my life with things I love to do, and among the people I have met there are collaborators, colleagues and teachers I couldn't possibly know about yet. Our futures are unknowable. We put one foot in front of the other.
+
+Never graduate,
