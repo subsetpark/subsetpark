@@ -1,5 +1,6 @@
 title: The Rodeo Clown Theory of Personal Development
-date: 2014-05-01 18:38:37
+date: 2014-05-01
+status: post
 
 ## Prelude
 

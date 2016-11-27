@@ -1,4 +1,6 @@
 title: Posical, the Positivist Calendar for Python
+date: 2014-06-30
+status: post
 
 Let's begin 225 years ago. In the year 1789 of the conventional [Gregorian calendar](http://en.wikipedia.org/wiki/Gregorian_calendar), widespread crisis and dissent forced the Estates-General to convene in France for the first time in 175 years. Thus began the French Revolution.
 
@@ -66,78 +68,70 @@ Thus it is that I write to you on this day, Wednesday, the 24th of Archimedes, i
 
 I've written a Python library, [posical](https://github.com/subsetpark/posical), to model and explore the Positivist calendar. My initial aim was to create `AlternateDate` objects that could interact with [`date` objects](https://docs.python.org/3.3/library/datetime.html#datetime.date) produced by the standard `datetime` library. 
 
-```python
-class AlternateDate(object):
+    class AlternateDate(object):
 
-    def __init__(self, year, month, day, calendar):
-        self.year = year
-        self.month = month
-        self.day = day
-        self.day_of_year = (month - 1) * calendar.weeks_in_a_month * calendar.days_in_a_week + day
-        if self.day_of_year > 366:
-            raise ValueError("This day cannot exist.")
+        def __init__(self, year, month, day, calendar):
+            self.year = year
+            self.month = month
+            self.day = day
+            self.day_of_year = (month - 1) * calendar.weeks_in_a_month * calendar.days_in_a_week + day
+            if self.day_of_year > 366:
+                raise ValueError("This day cannot exist.")
 
-        self.is_leap = calendar.is_leap(self.to_gregorian().year)
-                        
-        self.weekday = calendar.get_weekday(self.day)
-        self.month_name = calendar.get_month_name(self.month)
-        self.day_name = calendar.get_day_name(self.day_of_year, self.is_leap)
-        self.weekday_name = calendar.get_weekday_name(self.weekday)
-```
+            self.is_leap = calendar.is_leap(self.to_gregorian().year)
+                            
+            self.weekday = calendar.get_weekday(self.day)
+            self.month_name = calendar.get_month_name(self.month)
+            self.day_name = calendar.get_day_name(self.day_of_year, self.is_leap)
+            self.weekday_name = calendar.get_weekday_name(self.weekday)
 
 ## Date Interactions
 
 The AlternateDate class has methods that take care of two types of interaction with standard `datetime` classes: date comparison and timedelta math. Standard date objects are able to interact with each other, and do things like the following:
 
-```python
->>> import datetime
->>> d = datetime.date(2014, 4, 18)
->>> d1 = datetime.date(2014, 4, 19)
->>> d1 > d
-True
->>> d1 - d
-datetime.timedelta(1)
->>> 
-```
+    >>> import datetime
+    >>> d = datetime.date(2014, 4, 18)
+    >>> d1 = datetime.date(2014, 4, 19)
+    >>> d1 > d
+    True
+    >>> d1 - d
+    datetime.timedelta(1)
+    >>> 
 
 That is, you can compare two dates to see which is 'greater' (in the sense of later, or I suppose, containing more days since the start of time), and you can also work with timedeltas. The `timedelta` class represents the absolute difference between two times, expressed (when it comes to date math) as a number of days. So tomorrow minus today results in a timedelta of 1 day. And tomorrow plus a timedelta of 1 day equals a date object representing the day after tomorrow.
 
-```python
-def __add__(self, arg):
-    return self.calendar.from_date(arg + self.to_gregorian())
-__radd__ = __add__
-def __sub__(self, arg):
-    return self.calendar.from_date(self.to_gregorian() - arg)
-def __rsub__(self, arg):
-    return self.calendar.from_date(arg - self.to_gregorian())
-def __eq__(self, other_date):
-    return other_date == self.to_gregorian()
-def __gt__(self, other_date):
-    return self.to_gregorian() > other_date
-def __lt__(self, other_date):
-    return self.to_gregorian() < other_date
-def __ge__(self, other_date):
-    return self.to_gregorian() >= other_date                
-def __le__(self, other_date):
-    return self.to_gregorian() <= other_date    
-```
+    def __add__(self, arg):
+        return self.calendar.from_date(arg + self.to_gregorian())
+    __radd__ = __add__
+    def __sub__(self, arg):
+        return self.calendar.from_date(self.to_gregorian() - arg)
+    def __rsub__(self, arg):
+        return self.calendar.from_date(arg - self.to_gregorian())
+    def __eq__(self, other_date):
+        return other_date == self.to_gregorian()
+    def __gt__(self, other_date):
+        return self.to_gregorian() > other_date
+    def __lt__(self, other_date):
+        return self.to_gregorian() < other_date
+    def __ge__(self, other_date):
+        return self.to_gregorian() >= other_date                
+    def __le__(self, other_date):
+        return self.to_gregorian() <= other_date    
 
 AlternateDate objects can get in on the fun as well. I defined the magic methods that control date objects' response to the comparison, addition and subtraction methods—and what's great about Python's operator handling is, I'm able to do it with respect to the operators themselves. In each case it's usually just a matter of presenting the AlternateDate's Gregorian equivalent back to the object it's being compared to. Thus if you want to compare a Positivist date and a Gregorian date, the Positivist date will respond with a standard datetime version of itself, and the two datetime date objects will be able to report their comparison. But more exciting is that if you want to compare to Positivist dates, the exact same behavior produces the desired outcome: the operator is passed to the first of the two dates, which produces a Gregorian version of itself and passes control back to the other date. The other date does the exact same thing, producing a Gregorian version of itself and calling the operator with its argument. Now the comparison is being called on two standard datetime `date` objects and the correct result is returned.
 
-```python
->>> print(d)
-Friday, 26th of Archimedes, 225: Frontinus
->>> print(d1)
-Saturday, 27th of Saint Paul, 231: William Penn
->>> d1 > d
-True
->>> d1 - d
-datetime.timedelta(2248)
->>> d1 + datetime.timedelta(2248)
-positivist date(237, 8, 27)
->>> d - datetime.date.today()
-datetime.timedelta(2)
-```
+    >>> print(d)
+    Friday, 26th of Archimedes, 225: Frontinus
+    >>> print(d1)
+    Saturday, 27th of Saint Paul, 231: William Penn
+    >>> d1 > d
+    True
+    >>> d1 - d
+    datetime.timedelta(2248)
+    >>> d1 + datetime.timedelta(2248)
+    positivist date(237, 8, 27)
+    >>> d - datetime.date.today()
+    datetime.timedelta(2)
 
 ## Calendar Metaprogramming
 
@@ -145,57 +139,49 @@ As we saw above, many of the specifics of the Positivist Calendar are just desig
 
 So once I established the mechanics of creating date objects I decided I'd like to parameterize all these design decisions and make a flexible `AlternateCal` class that could create date objects under any calendar reform scheme that the user might like.
 
-```python
-def __init__(calendar, w_i_month=4, d_i_week=7, year_1=1789):
-        calendar.days_in_a_month = d_i_week * w_i_month
-        calendar.days_in_a_week = d_i_week
-        calendar.weeks_in_a_month = w_i_month
-        calendar.months_in_a_year = 365 // calendar.days_in_a_month
-        calendar.epagomenal_days = 365 % calendar.days_in_a_month
-        name_choices = ('New Adjusted', 'Utilitarian', 'Lycurgian', 'Multi-Manifold', 'Positivist', 'Crepuscular', 'Urquhart', 'Adamantine', 'Organic Non-Repeating', 'Antediluvian', 'Re-Corresponding')
-        calendar.name = name_choices[hash((w_i_month, d_i_week, year_1)) % 11]
-        calendar.year_offset = year_1
-```
+    def __init__(calendar, w_i_month=4, d_i_week=7, year_1=1789):
+       calendar.days_in_a_month = d_i_week * w_i_month
+       calendar.days_in_a_week = d_i_week
+       calendar.weeks_in_a_month = w_i_month
+       calendar.months_in_a_year = 365 // calendar.days_in_a_month
+       calendar.epagomenal_days = 365 % calendar.days_in_a_month
+       name_choices = ('New Adjusted', 'Utilitarian', 'Lycurgian', 'Multi-Manifold', 'Positivist', 'Crepuscular', 'Urquhart', 'Adamantine', 'Organic Non-Repeating', 'Antediluvian', 'Re-Corresponding')
+       calendar.name = name_choices[hash((w_i_month, d_i_week, year_1)) % 11]
+       calendar.year_offset = year_1
 
 To this end I created the `AlternateCal` class as a parent class, which takes a few parameters as to how the weeks and months should fit together. 
 
-```python
->>> print(AlternateCal(w_i_month=14, d_i_week=3, year_1=400))
-The Organic Non-Repeating calendar, consisting of 3-day weeks, 14-week months, and 8-month years, with 29 epagomenal day(s).
->>> print(AlternateCal(w_i_month=5, d_i_week=6, year_1=11000))
-The Utilitarian calendar, consisting of 6-day weeks, 5-week months, and 12-month years, with 5 epagomenal day(s).
-```
+    >>> print(AlternateCal(w_i_month=14, d_i_week=3, year_1=400))
+    The Organic Non-Repeating calendar, consisting of 3-day weeks, 14-week months, and 8-month years, with 29 epagomenal day(s).
+    >>> print(AlternateCal(w_i_month=5, d_i_week=6, year_1=11000))
+    The Utilitarian calendar, consisting of 6-day weeks, 5-week months, and 12-month years, with 5 epagomenal day(s).
 
 The `alternateDate` class is then defined within the AlternateCal's `__init__` function. All of its own logic—for instance, which day of the year it is (very useful for doing conversions to other calendars), is performed relative to the parameters set by its parent class.
 
-```python
-self.day = day
-self.day_of_year = (month - 1) * calendar.weeks_in_a_month * calendar.days_in_a_week + day
-```
+    self.day = day
+    self.day_of_year = (month - 1) * calendar.weeks_in_a_month * calendar.days_in_a_week + day
 
 In this way we can create objects that are instances of the same `AlternateDate` class, but initialized with fundamentally different behavior.
 
-```python
->>> posical = AlternateCal(w_i_month=4, d_i_week = 7, year_1 = 1789)
->>> badcal = AlternateCal(w_i_month=6, d_i_week = 8, year_1 = 1945)
->>> print(posical)
-The Positivist calendar, consisting of 7-day weeks, 4-week months, and 13-month years, with 1 epagomenal day(s).
->>> print(badcal)
-The Re-Corresponding calendar, consisting of 8-day weeks, 6-week months, and 7-month years, with 29 epagomenal day(s).
->>> d1 = posical.date(200, 4, 15)
->>> d2 = badcal.date(54, 1, 3)
->>> d1
-positivist date(200, 4, 15)
->>> d2
-re-corresponding date(54, 1, 3)
->>> d2 - d1
-datetime.timedelta(3556)
->>> d2 + datetime.timedelta(3556)
-re-corresponding date(63, 6, 32)
->>> d1 + datetime.timedelta(3556)
-positivist date(210, 1, 3)
-```
+    >>> posical = AlternateCal(w_i_month=4, d_i_week = 7, year_1 = 1789)
+    >>> badcal = AlternateCal(w_i_month=6, d_i_week = 8, year_1 = 1945)
+    >>> print(posical)
+    The Positivist calendar, consisting of 7-day weeks, 4-week months, and 13-month years, with 1 epagomenal day(s).
+    >>> print(badcal)
+    The Re-Corresponding calendar, consisting of 8-day weeks, 6-week months, and 7-month years, with 29 epagomenal day(s).
+    >>> d1 = posical.date(200, 4, 15)
+    >>> d2 = badcal.date(54, 1, 3)
+    >>> d1
+    positivist date(200, 4, 15)
+    >>> d2
+    re-corresponding date(54, 1, 3)
+    >>> d2 - d1
+    datetime.timedelta(3556)
+    >>> d2 + datetime.timedelta(3556)
+    re-corresponding date(63, 6, 32)
+    >>> d1 + datetime.timedelta(3556)
+    positivist date(210, 1, 3)
 
 # Right History's Wrongs!
 
-I encourage you to [play around](http://github.com/subsetpark/posical) with this library and make your own improbable calendar reforms. There's also a [barebones web app](http://posical.herokuapp.com), to which I will be adding more of the Python library's features.
+I encourage you to [play around](http://github.com/subsetpark/posical) with this library and make your own improbable calendar reforms. 

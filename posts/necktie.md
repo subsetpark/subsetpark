@@ -1,5 +1,6 @@
 title: Designing Tie Knots by Random Walks
 date: 2014-03-25
+status: post
 
 I'm a fan of [85 Ways to Tie a Tie][85], by Thomas Fink and Young Mao. It's an exploration of a mathematical model for necktie knots. I'll let them [explain][designing]:
 
@@ -25,7 +26,6 @@ I asked [Alan][] for a little guidance on how to better understand the graph of 
 
 This model works very well for the necktie knots: you can easily say, given the direction and orientation of any individual turn: *to find the next possible steps in our path, choose from the other directions and other orientation* and you have your choices. In other words, 'flip the bit' of the current node. Using Python's built-in set datatypes you get a simple and fairly elegant way to do XOR operations on node attributes.
 
-    ::::python
     def flip(value):
         # 'Flip the bit' of the provided value, providing its alternate(s)
         if value in DIRECTIONS:
@@ -37,7 +37,6 @@ This model works very well for the necktie knots: you can easily say, given the 
 
 So then it makes sense for individual nodes (turns in our necktie knot) to be the active class in this model. A Node object has a direction and an orientation, and using this information and the above helper function, it's able to report on its children—the possible next steps in the tie.
 
-    ::::python
     >>> n = Node("Li")
     >>> n.get_children()
     {'Co', 'Ro'}
@@ -46,19 +45,18 @@ So then it makes sense for individual nodes (turns in our necktie knot) to be th
 
 The next step is to actually tie the tie. Using this model a recursive function makes sense; the nodes don't care where they are in the tie so we can do the same operation in any place.
 
-    ::::python
     def random_walk(walk=[]):
-            if not walk:
-                return random_walk([starter()])
-            elif walk[-1] == Node('Ti') and tiable(walk):
-                return walk
-            elif walk[-1] == Node('Ti') and not tiable(walk):
-                return random_walk(walk[:-4])
-            elif len(walk) > 9:
-                return random_walk(walk[:-4])
-            else:
-                walk.append(random.choice(walk[-1].get_children()))
-                return random_walk(walk)
+        if not walk:
+            return random_walk([starter()])
+        elif walk[-1] == Node('Ti') and tiable(walk):
+            return walk
+        elif walk[-1] == Node('Ti') and not tiable(walk):
+            return random_walk(walk[:-4])
+        elif len(walk) > 9:
+            return random_walk(walk[:-4])
+        else:
+            walk.append(random.choice(walk[-1].get_children()))
+            return random_walk(walk)
 
 Here we recursively walk through the tie, which is just a list of nodes. If it doesn't exist, we start one, and if it's done (all knots end with 'Co Ti'; 'Ti' is added as a possible child for 'Co' nodes) we return it. And if it's somewhere in the middle we make a random choice of the node's children and take it on the end[^1]. 
 
@@ -79,7 +77,6 @@ So I did implement that recursive approach, and I did implement a couple optimiz
 
 What I came up with is a function that runs alongside the get_children() function and reports the legal moves given the state of the path at that time, irrespective of the active node. One that, in other words, encodes the 'rules of play'—the constraints that a knot must fulfill in order to be included in our set of 85, regardless of how we're getting there. 
 
-    ::::python
     def legal_moves(self):
         legal_moves = set([])
         if self.penultimate():
@@ -100,13 +97,11 @@ What I came up with is a function that runs alongside the get_children() functio
 
 This function has no particular interest in the moves available to the most recent node in the walk. It generates a set of potential next states based entirely on, if you will, the position of the board. It's hard not to lapse into gaming metaphors here, though the linguistic one above also seems apt.
 
-    :::python
     def legal_intersection(self):
         return list(self.get_children() & self.legal_moves())
 
 In either case the mechanism is one of intersecting the 'powers' of an actor—this piece moves in a line, or jumps by two, but can't go diagonal; this word can come after the following part of speech—with an overall constraint based on the total structure over time, or on relations between that actor and other pieces on the board: the king cannot put himself into check, or "the red dog climbs the stairs" is not admissable if we haven't heard from any red dog thus far.
 
-    ::::python
     >>> k = Knot("Li Co Ri")
     >>> k.legal_intersection()
     ['Lo', 'Co']

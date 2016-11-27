@@ -1,6 +1,6 @@
 Title: Abba
 Date: 2014-03-19
-<!-- Status: draft -->
+status: post
 
 My first major project at [Hacker School][hs] is called [Abba](http://github.com/subsetpark/abba), the Abbreviation Engine. In order to understand why Abba exists I need to backtrack a little.
 

@@ -1,6 +1,6 @@
 title: Git Patch Mode and Working With Git in Python
 date: 2014-04-08
-<!-- status: draft -->
+status: post
 
 Today I deployed [gitp](https://sublime.wbond.net/packages/gitp), my first [Sublime Text][ST] plugin. 
 
@@ -177,7 +177,7 @@ With `gitp` you can stage individual changes for commit, from your editor.
 
 First, all changed areas of your file are indicated with numbered icons in the gutter.
 
-![Active Hunks Screenshot]({filename}/images/hunks.png)
+![Active Hunks Screenshot](../images/hunks.png)
 
 If you'd like to stage a hunk, you can run either of two different commands:
 
@@ -185,7 +185,7 @@ If you'd like to stage a hunk, you can run either of two different commands:
 
 Sublime Text will ask you to enter the hunks you'd like to stage.
 
-![Choose Hunks]({filename}/images/choose.png)
+![Choose Hunks](../images/choose.png)
 
 ##### Stage These Hunks
 
@@ -193,7 +193,7 @@ Any hunks that are currently under the cursor will be staged. This supports mult
 
 Once a hunk is staged it gets a dot next to it.
 
-![Staged Hunk]({filename}/images/staged.png)
+![Staged Hunk](../images/staged.png)
 
 #### Committing Hunks
 
@@ -207,7 +207,7 @@ There are a few other commands that are useful in this line of work:
 
 You can view the individual diff results for any change(s) in your project.
 
-![View Hunks]({filename}/images/view.png)
+![View Hunks](../images/view.png)
 
 ##### Unstage Hunks
 

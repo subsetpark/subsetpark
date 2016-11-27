@@ -1,5 +1,6 @@
 title: Comparing Dates and Datetimes in the Django ORM
 date: 2015-04-17
+status: post
 
 ## The issue at hand 
 
@@ -9,7 +10,6 @@ When working in Django, one often finds oneself with the following sort of quest
 
 But most of the time, your `created_on`/`updated_on`/`posted_on` column will be a Datetime, and today is not a Datetime—it's a Date[^1]. So if you simply query like this:
 
-    ::::python
     Foo.objects.filter(created_on=date)
 
 You'll always receive an empty result—or at best you'll receive only those objects that were created at the exact moment that comes up when `date` is coerced into a Datetime (in the case of right now, at 12:21 EST on April 17, 2015, that would be `2015-04-17 04:00:00`). 
@@ -38,20 +38,17 @@ To sum up, here are the approaches recommended in the many answers to these simi
 ### Use __range
 Picking a min and max datetime, pass them as a tuple like this: 
 
-    ::::python
     Foo.objects.filter(created_on__range=(min_dt, max_dt))
 
 Which will return all datetime records within the two values of the tuple.
 
 There are a couple ways to get your min and max. If you have a target datetime already you can use timedeltas:
 
-    ::::python
     min_dt = target_date - timedelta(hours=12)
     max_dt = target_date + timedelta(hours=12)
 
 Or if you have a target date you can use the `min` and `max` of that date:
 
-    ::::python
     min_dt = datetime.datetime.combine(date, datetime.time.min)
     max_dt = datetime.datetime.combine(date, datetime.time.max)
 
@@ -61,7 +58,7 @@ These of course have slightly different effects. In particular, you need to deci
 
 ### Use __contains
 Take advantage of SQL's string matching by filtering like this:
-    ::::python
+
     Foo.objects.filter(created_on__contains=date)
 
 Neither of the above two really knocks it out of the park for me. The latter is, generously, a hack; taking advantage of the way that dates and datetimes are stored as strings in order to to find matches. But the former is quite verbose, and requires manually doing tricky datetime and timedelta logic.
@@ -78,7 +75,6 @@ Luckily, [Django 1.7][d17] introduced some new features when it comes to enxtend
 
 The new `Transform` class, as it says in the 1.7 release notes, "allows transformations of database values prior to the final lookup". While it looks a bit intimidating, we were able to use the [howto documentation](https://docs.djangoproject.com/en/1.7/howto/custom-lookups/) to write a Transform that does exactly what we've been looking for within our filter calls. It looks like this:
 
-    #!python
     from django.db.models import Transform
     from django.db import models
 
@@ -102,7 +98,6 @@ A Transform is a very useful kind of lookup (the things separated by `__` in the
 
 This allows us to make queries like this:
 
-    ::::python
     Foo.objects.filter(created_on__date=date)
 
 And get back everything that was created on the date in question. 

@@ -1,5 +1,6 @@
 Title: Mitaines
 date: 2014-04-6
+status: post
 
 In French Canada, according to [Pagat.com][1], there's a game called [*Mitaines*][2], which means "Mittens" in French. I'm not sure when I first heard about this game, but it stuck with me. I couldn't fathom, judging from the rules, how it was played, but I knew that the game consisted of building combinations that were called *mittens*, *gloves*, and *socks*. This struck me as adorable and odd. I couldn't find any other information about it; if you google "Mitaines card game", the only results aside from Pagat are pages that seem to derive entirely from Pagat, and earlier works by me, including the [stream][3] on [Thoughtstreams.io][4] that this article is based on. But Pagat is pretty authoritative so I persist in believing that this game exists.
 
@@ -34,13 +35,13 @@ The Thoughtstream I was keeping, linked above, goes into more detail about my pr
 
 My first step was to model the likelihood of drawing the various scoring combinations in the game using binomial coefficients and combinatorics. To this end I used the OS X application [Soulver][], which acts like a live calculator and is quite easy to use. 
 
-<iframe src="|filename|/static/mitaines.html" width="800px" height="1235px"></iframe>
+<iframe src="../static/mitaines.html" width="800px" height="1235px"></iframe>
 
 The **Event Ratios** section expresses the likelihood of any given draw as a ratio of the rarest (ordinary) draw, socks: four of a kind. As we can see, one is 861 times more likely to draw a pair than to draw four of a kind when playing with six cards and a 52-card deck. Which is fine for poker, but one would like to see them a bit more often in this game of playing to the middle.
 
 Here's what happens if we adjust the hand size upward, to eight cards, and strip out four ranks from the deck, leaving a 36-card deck, with 32 cards to be played in two deals after a four-card initial flop. 
 
-<iframe src="|filename|/static/mitainesadjusted.html" width="800px" height="1235px"></iframe>
+<iframe src="../static/mitainesadjusted.html" width="800px" height="1235px"></iframe>
 
 We see that mittens are now 110 times more likely than socks, not 861. The ratios have not been artifically rebalanced, and it's still no sure thing that a player can draw one of the 12 groups of four cards that get you a sock (Jacks are a special category), but it's in the realm of possibility. 
 
