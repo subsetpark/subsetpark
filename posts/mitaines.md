@@ -1,5 +1,5 @@
 Title: Mitaines
-date: 2014-04-6
+date: 2014-04-06
 status: post
 
 In French Canada, according to [Pagat.com][1], there's a game called [*Mitaines*][2], which means "Mittens" in French. I'm not sure when I first heard about this game, but it stuck with me. I couldn't fathom, judging from the rules, how it was played, but I knew that the game consisted of building combinations that were called *mittens*, *gloves*, and *socks*. This struck me as adorable and odd. I couldn't find any other information about it; if you google "Mitaines card game", the only results aside from Pagat are pages that seem to derive entirely from Pagat, and earlier works by me, including the [stream][3] on [Thoughtstreams.io][4] that this article is based on. But Pagat is pretty authoritative so I persist in believing that this game exists.
