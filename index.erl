@@ -34,7 +34,9 @@ site([Data]) ->
        {files, "images/*.png"},
 
        "site/static/*.html" =>
-       {files, "assets/*.html"}
+       {files, "assets/*.html"},
+
+       "site/CNAME" => {string, "blog.zdsmith.com"}
     }.
 
 is_post(Post) ->
