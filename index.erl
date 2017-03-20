@@ -9,7 +9,7 @@ data(_) ->
        about => {markdown, "about.md"}
     }.
 
-site([Data]) ->
+site(Data) ->
     #{
        "site/index.html" =>
        {template, "templates/index.html", #{site_root => ""}},
