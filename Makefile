@@ -1,5 +1,5 @@
 gen:
-	../lambdapad/bin/lpad-gen
+	lpad-gen
 
 clean:
 	rm -rf site/*
