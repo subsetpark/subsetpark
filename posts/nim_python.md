@@ -74,21 +74,23 @@ I say "similar"---after all, in `time_travel` above the behavior is not actually
 
 ```py
 
-class Datetime:
+class MyDatetime:
 
-    def time_travel(self):
+    def time_travel(self, time=None):
         """
         Do cool stuff here
         """
+        time = time or self.time()
+        ...
 
-class Date:
+class MyDate(MyDatetime):
 
     def time_travel(self):
         """
         Construct a datetime and then do cool stuff
         """
-        dt = Datetime(self, time(0))
-        dt.time_travel()
+        dummy_time = time(0)
+        super().time_travel(time=dummy_time)
 ```
 
 That is, the behavior of `time_travel` when `d` is a `date` is a superset of the behavior when `d` is a `datetime`. We could argue the merits of Python's thoroughly class-based, object-oriented approach, but it's not available in Nim. 
@@ -136,9 +138,9 @@ denizen = randomly_get_barnyard_denizen()
 denizen.speak()
 ```
 
-And if `denizen` happens to be a `Cow`, you'll see "moo", and if it happens to be a `Chicken`, you'll see "bok bok". Nice. (And if it happens to be a `Farmer`, you'll blow up at runtime[^notimplemented]. Not so nice).
+And if `denizen` happens to be a `Cow`, you'll see "moo", and if it happens to be a `Chicken`, you'll see "bok bok". Nice. (And if it happens to be a `Farmer`, you'll blow up at runtime[^notimplemented]. Not so nice.)
 
-[^notimplemented]: Alternately, if you didn't raise inside Farmer.speak(), you would just have a subtle runtime bug where one third of your calls fail silently (literally).
+[^notimplemented]: Alternately, if you didn't raise inside Farmer.speak(), you would just have a subtle runtime bug where one third of your calls fails silently (literally).
 
 The good news is that with procedure overloading you can write Nim code like this
 
@@ -190,7 +192,7 @@ Gets you:
 scratch.nim(14, 14) Error: type mismatch: got (Chicken) but expected 'Farmer = object'
 ```
 
-So that's a limitation. That is probably going to be your first indication that *types are not classes*. In fact, if you have a function in your program that *might* return a `Cow`, and *might* return a `Chicken`, depending on some factor not known at compile time (the contents of a text file, maybe, or a random number), then maybe they are actually the *same type*. Maybe when you boil them down to the actual structure of their data, they're the same; maybe it's just the behavior that differs. In Python we would use a class to implement this, but we don't need to do that in Nim. 
+So that's a limitation. That is probably going to be your first indication that *types are not classes*. In fact, if you have a function in your program that *might* return a `Cow`, and *might* return a `Chicken`, depending on some factor not known at compile time (the contents of a text file, maybe, or a random number), then maybe they are actually the *same type*. Maybe when you boil them down to the actual structure of their data, and where they're used, they're the same; maybe it's just the behavior that differs. In Python we would use a class to implement this, but we don't need to do that in Nim. 
 
 In Python we are used to setting up a bunch of classes in order to concretize our domain; if we have three types of thing (three "nouns"), we'll make three classes. Type-safe programming asks us to think a little more rigorously about the ontology of our application. It's not just a matter of laying out the objects that we think make up our domain; do our procedures reflect that ontology as well?
 
