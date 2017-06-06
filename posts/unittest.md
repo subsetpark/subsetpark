@@ -2,7 +2,7 @@ Title: Unit Testing in Nim
 Date: 2017-05-07
 status: post
 
-# Unit Testing in Nim and Python
+## Unit Testing in Nim and Python
 
 Here's a snippet of a unittest test case that I wrote in Python some years ago:
 
@@ -59,7 +59,7 @@ Traceback (most recent call last):
 AssertionError
 ```
 
-# Unit testing in Nim
+## Unit testing in Nim
 
 Here's a pretty straightforward translation of the above method into Nim:
 
@@ -152,11 +152,11 @@ It turns out we forgot to implement `==`. Without a `==` proc written for the `C
   [OK] equal to
 ```
 
-## Checkpoint A
+### Checkpoint A
 
 The above is all you need to understand writing simple unit tests in Nim. We can see that the basic structure of a Nim unittest follows very closely to that of a unittest TestCase: test case, setup, tests, teardown.
 
-## Checkpoint B
+### Checkpoint B
 
 One thing that's worth pointing out is that while the structure of the two test suites is very similar, the style of the code is different. The Python code is structured as a class, where each test is a method. Further, the assertions are methods of the base class that the test case inherits from. This makes sense, as Python is a fundamentally object-oriented language, and class inheritance is one of the main ways that things get done in a Python program.
 
@@ -170,7 +170,7 @@ But this also means that they are extremely effective at creating *[DSLs](https:
 
 [^pytest]: There is another well-established testing framework in Python: [pytest](https://docs.pytest.org/en/latest/). Which, it should be noted, can do exactly what I've made a lot of noise about unittest not being able to do; it allows you to use normal `assert foo == bar` statements in your tests. In some ways, this is the exception that proves the rule when it comes to macros; the wizardry behind pytest's [assertion introspection](http://pybites.blogspot.com/2011/07/behind-scenes-of-pytests-new-assertion.html) is heavy-duty enough that it might as well be a macro itself.
 
-## Checkpoint C
+### Checkpoint C
 
 I feel that the story of testing in Nim is far from over. unittest is powerful and elegant, and admirably simple; the entire module is about 400 lines. But it's not as full-featured as frameworks that have been around in Python for much longer. 
 
