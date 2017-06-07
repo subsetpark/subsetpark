@@ -49,7 +49,7 @@ echo b
 
 You can probably see that the structure is very similar. There are a couple subtle differences, so we'll go through it. The first difference is that the first two statements, equivalent to the first two statements in the D code are evaluated in a `static` block. There's nothing about the statements themselves specific to compile-time execution; rather it's the context provided by their scope that indicates it's happening at compile time. Now that we're outside the `static` block, we're back in the runtime; we bind `b` outside of the static context with a `const`[^3], and echo during execution of the program itself.
 
-[^3]: The `const` keyword behaves very similarly to D's manifest constants; usages in the compiled C code are replaced directly by the assigned value.
+[^3]: The `const` keyword behaves very similarly to D's `static`.
 
 Really, the only differences here are syntactic; I prefer Nim's designation of execution context with blocks rather than the somewhat more occult special-casing of single-value `enum`s, but they have equal expressive power. But let's look at what the Nim docs say about `static`:
 
