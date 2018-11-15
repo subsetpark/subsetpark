@@ -12,6 +12,7 @@ I've given one recorded talk, at PyGotham '17:
 
 A useful RPN calculator.
 
-### [Pantagruel](https://hexdocs.pm/pantagruel/)
+### [Pantagruel](https://hexdocs.pm/pantagruel/readme.html)
 
-An in-progress formal specification language. Designed to be written and read by both humans and computers.
+An in-progress formal specification language. Designed to be written
+and read by both humans and computers.
