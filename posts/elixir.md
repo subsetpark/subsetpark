@@ -1,11 +1,11 @@
 Title: Sketches of Elixir
-Date: 2018-10-21
+Date: 2018-12-26
 status: post
 
 Friends, I am now at least in this respect a rare breed: an Elixir
 programmer who has never written Ruby.
 
-I was never a professional Erlang programmer; I cut my teeth on Python
+I was never a professional Erlang programmer. I cut my teeth on Python
 and began working in Python, but Erlang was the language I learned
 after that and the one that I looked for excuses to write in (in addition
 to [Nim][], which would come a little later, but which I would also be able
@@ -15,21 +15,24 @@ to finagle into production at MakeSpace).
 
 So here was my impression of Elixir for the first several years of my
 passing acquaintance with it: it's Erlang with Ruby syntax. I had never
-ended up writing in Ruby because I had started out with Python, and I
-was already happy with Erlang and its syntax. So I had a fairly simple
-understanding of the Elixir language and the roots of its popularity.
+ended up writing any Ruby, and I was already happy with Erlang and its
+syntax. So I had a fairly simplistic understanding of the Elixir language
+and the roots of its popularity and it didn't seem that there was anything
+of value to me.
 
-For better or worse, the first thing that most people mention when
+For better or worse, the first thing that many people mention when
 Erlang comes up is that the syntax is unfamiliar and confusing; at the
 very least it's controversial (I love it). Ruby, on the other hand,
-is vastly more popular than Erlang. So there's a significant population that finds Erlang syntax eccentric and Ruby conventional and pleasing.
+is vastly more popular than Erlang. So there's a significant population
+that finds Erlang syntax eccentric and Ruby conventional and pleasing.
 
 On the other hand, there are many reasons to recommend the BEAM, OTP,
 and the Erlang Runtime System. And concurrent programming and functional
 programming are now vastly more mainstream than they might have been when
 Erlang was first developed. So there is a steady stream of object-oriented
 and/or web application programmers (Ruby or otherwise) taking an interest
-in Erlang. It would make sense that programmers coming from a Ruby background would find Elixir more palatable.
+in Erlang and the BEAM. It would make sense that programmers coming from
+a Ruby background would find Elixir more palatable.
 
 And marks of the Ruby frame of reference are all over Elixir; its creator
 after all was a [member of the Rails core team][rails], and its influence is
@@ -62,17 +65,19 @@ a different syntax. Learn the real thing."
 My memory of José's reply was something like, "that's a bit reductionist;
 there's also macros." I was embarrassed, not only because I didn't
 know that José was going to see my response, but because I didn't even
-know there *were* macros in Elixir.[^zulip] It's telling that this is my
-memory, because on looking back it's not actually what José said. I won't
-quote him directly, but I don't think it's breaking too many confidences
-to give a brief rundown of the features that José cited as distinct
-(aside from macros), as of early 2015, from Erlang:
+know there *were* macros in Elixir.[^zulip]
+
+In fact, it's telling that this is my memory, because on looking back
+it's not actually what José said. I won't quote him directly, but I
+don't think it's breaking too many confidences to give a brief rundown
+of the features that José cited as distinct (aside from macros), as of
+early 2015, from Erlang:
 
 - lazy collections;
 - more robust structured data (structs);
 - better tooling, incl. testing frameworks and Mix
 
-This is telling because at the time I thought, "well, sure, macros;
+This is telling because I remember thinking, "well, sure, macros;
 but Erlang has parse transforms (not that I know how to use them)
 and macros are weird and shouldn't be used that much anyway." I wasn't
 a macro guy and, in fact, still am not. I don't use macros that much
@@ -94,20 +99,31 @@ chance to write Elixir full-time to be, modulo some `def/end`s, just that.
 
 [frame]: http://frame.io
 
-So here's the actual value proposition for the Elixir language: it's not
-Erlang with Ruby syntax; it's Erlang with a robust and useful standard
-library and tooling.
+Now I've been writing Elixir, full-time, for several months. I am
+for better or worse a fully-converted *Elixir* programmer. I'd like to
+believe that I understand the language much better than I did in 2015. I
+also think that I better understand its place in the BEAM firmament and
+the wider realm of programming languages. As a programmer with an Erlang
+background and no Ruby background I might even be in a somewhat unusual
+position to comment on it. So here's the actual value proposition for
+the Elixir language: it's not Erlang with Ruby syntax; it's Erlang with
+a robust and useful standard library and tooling.
 
 The thing about the Ruby syntax in Elixir is that it is a complete red
-herring. It is by far the most superficial and least consequential element
-of the language. If you like Ruby syntax, if you dislike Ruby syntax, it
-doesn't really matter. You learn it and then you move on. It disappears
-almost immediately. This is perhaps the first thing I noticed coming to
-Elixir from Erlang: the base semantics are almost *identical*. That is,
-almost every element of the Erlang language is preserved wholesale;
-Elixir consists almost entirely of goodies that are piled on top. This
-is very reassuring to the Erlanger. You don't lose any of your intuition
-for what makes good code.[^assign-once]
+herring. It is by far the most superficial and least consequential
+element of the language[^homoicon]. If you like Ruby syntax, if you
+dislike Ruby syntax, it doesn't really matter. You learn it and then
+you move on. It disappears almost immediately. This is perhaps the
+first thing I noticed coming to Elixir from Erlang: the base semantics
+are almost *identical*. That is, almost every element of the Erlang
+language is preserved wholesale; Elixir can be seen almost entirely as
+a series of goodies that are piled on top. This is very reassuring to
+the Erlanger. You don't lose any of your intuition for what makes good
+code.[^assign-once]
+
+[^homoicon]: Except insofar as it's actually a quite-clever way to put
+together a surprisingly friendly and readable language that also provides
+a massive degree of homoiconicity.
 
 [^assign-once]: The sole exception to this is single assignment, which
 Elixir does away with, allowing the same variable to be bound more than
@@ -193,7 +209,7 @@ OTP application model, and the `gen_*` concept is even extended with new
 behaviours like `GenStage`.
 
 Of course, the simplicity and flatness of Erlang is not nothing, and
-Erlang has traded some of that away. With protocols, `__using__` macros
+Elixir has traded some of that away. With protocols, `__using__` macros
 and more, Elixir has many new forms of code reuse and polymorphism than
 are possible or idiomatic in Erlang. That means there are many more
 places with *magic* in them, where an imported module or expanded macro
