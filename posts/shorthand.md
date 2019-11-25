@@ -91,7 +91,7 @@ awkward to connect to, as you must cross the body of the letter before
 starting it. I felt that they were actually the slowest and clumsiest
 part of my writing; thus I actually stopped using them in favor of more
 superficially complex letters, or existing ones with diacritics (*k*
-in the first case, and ̣*ṭ* in the second). The combining dot below,
+in the first case, and *ṭ* in the second). The combining dot below,
 as in the second example, ended up getting a fair bit of use. *d* became
 *ṭ*, *ch* became *ɟ*, *v* became *ƒ̱*. Putting a dot below a letter
 (or crossing a descender) becomes a kind of voicedness toggle on that
