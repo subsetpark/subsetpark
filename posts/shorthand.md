@@ -220,11 +220,11 @@ the choice of *s* is entirely arbitrary. Smile and frown are equivalent
 in meaning. But if you choose a smile, then we must pay attention
 to the *orientation* of the right side of that stroke. It's pointing
 *upwards*. Now we have a semantics of blends: if you want represent *st*
-without anything in the middle, you *continue the vertical orientation*,
+without anything in the middle, you *continue the vertical orientation,*
 and write a short straight line going up and to the right. If, on the
-other hand, you want to represent *sVt*, with some intervening vowel in
-the middle (*sat*, *sit*, *set*, *soot*...), then you *reverse vertical
-orientation*, turning down and to the left.
+other hand, you want to represent *sVt*, with some intervening vowel
+in the middle (*sat*, *sit*, *set*, *soot*, ...), then you *reverse*
+vertical orientation, turning down and to the left.
 
 Thus, every stroke in the system is always clearly pointing up or down.
 
