@@ -413,13 +413,22 @@ The procedure to play a gask contract is as follows:
 3. Declarer discards a number of cards equal to the level of their bid (back down to 13);
 3. Declarer decides to fold or continue;
 4. (if declarer continues) depending on the level of the bid:
-   - (0, 1, 2): the declarer may:
-     1. name a trump suit; play to win (7, 8, 9) tricks;
-     2. discard an additional (2, 1, 0) cards; play misère.
-   - (3, 4): the declarer may:
-     1. name a trump suit; play to win (10, 11) tricks;
-     2. discard an additional (1, 0) cards; turn hand face-up; play misère.
-   - (5, 6): declarer names a trump suit; plays to win 12 tricks.
+   - level 0: the declarer may:
+     1. name a trump suit; play to win 7 tricks;
+     2. discard an additional 2 cards; play misère.
+   - level 1: the declarer may:
+     1. name a trump suit; play to win 8 tricks;
+     2. discard an additional card; play misère.
+   - level 2: the declarer may:
+     1. name a trump suit; play to win 9 tricks;
+     2. discard 0 cards; play misère.
+   - level 3: the declarer may:
+     1. name a trump suit; play to win 10 tricks;
+     2. discard an additional card; turn hand face-up; play misère.
+   - level 4: the declarer may:
+     1. name a trump suit; play to win 11 tricks;
+     2. discard no cards; turn hand face-up; play misère.
+   - level 5, level 6: declarer names a trump suit; plays to win 12 tricks.
 
 Gask *may* be bid *in color* and *in preference*; however, such a bid
 forces the declarer to play a positive game.
