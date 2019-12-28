@@ -292,15 +292,14 @@ introduce the rest of the bids.
 
 The main point as we develop the game is to increase the number of
 biddable hands. That is, to introduce different types of bids that favor
-other hands so that any player might have a chance at making a bid of
+other hands so that any player might have a chance at making a bid if
 they're lucky.
 
 The basic bids obviously favor *strong* hands; the declarer makes their
 bid by making a certain number of tricks, and the bids are ordered by
 the number of tricks, so the bidder with the strongest hand will win
-their bid. We can introduce *misère* bids, where the aim is to *lose
-all the tricks*, in order to give players with very *weak* hands a an
-equal opportunity to bid.
+their bid. We can introduce *misère* bids, where the aim is to *lose all the tricks*,
+in order to give players with very *weak* hands an equal opportunity to bid.
 
 Rules for play at misère are identical to normal play: players must
 follow suit and the high card takes the trick. The one difference is
@@ -318,7 +317,7 @@ The simplest and easiest misère bid is *gök*. It proceeds as follows:
 1. Declarer takes the whole stock;
 2. Declarer discards 13 cards;
 3. Declarer decides to fold or continue;
-4. Declarer turns his hand face-up.
+4. Declarer turns their hand face-up.
 
 As usual, forehand leads and the declarer then attempts to lose all
 13 tricks.
