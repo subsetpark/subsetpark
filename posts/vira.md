@@ -172,16 +172,16 @@ amount in Ƀ they have to pay into the pool if they lose.
 
 |Bid         |w|l|
 |------------|-|-|
-|Game-6      |1|1|
+|Game 6      |1|1|
 |Turn-one 6  |1|1|
-|Game-7      |1|1|
+|Game 7      |1|1|
 |Turn-two 6  |1|2|
 |Turn-one 7  |1|1|
-|Game-8      |1|1|
+|Game 8      |1|1|
 |Turn-two 7  |1|2|
 |Turn-one 8  |2|1|
 |Turn-two 8  |2|2|
-|Game-9      |1|1|
+|Game 9      |1|1|
 |Turn-three 9|3|3|
 
 We can see that the payments are generally the same. The turn- bids are
@@ -200,16 +200,16 @@ the same for a win or a loss.
 
 |Bid         |*|c| p|
 |------------|-|-|--|
-|Game-6      |0|0| 1|
+|Game 6      |0|0| 1|
 |Turn-one 6  |0|0| 1|
-|Game-7      |0|0| 1|
+|Game 7      |0|0| 1|
 |Turn-two 6  |0|1| 1|
 |Turn-one 7  |0|1| 1|
-|Game-8      |0|1| 1|
+|Game 8      |0|1| 1|
 |Turn-two 7  |1|1| 3|
 |Turn-one 8  |1|1| 3|
 |Turn-two 8  |1|3| 5|
-|Game-9      |1|1| 3|
+|Game 9      |1|1| 3|
 |Turn-three 9|3|5|11|
 
 # Vira with codille
@@ -224,16 +224,16 @@ If a player loses by codille, they have to pay a greater amount in
 
 |Bid         |w|l|c|
 |------------|-|-|-|
-|Game-6      |1|1|2|
+|Game 6      |1|1|2|
 |Turn-one 6  |1|1|2|
-|Game-7      |1|1|2|
+|Game 7      |1|1|2|
 |Turn-two 6  |1|2|4|
 |Turn-one 7  |1|1|2|
-|Game-8      |1|1|2|
+|Game 8      |1|1|2|
 |Turn-two 7  |1|2|4|
 |Turn-one 8  |2|1|2|
 |Turn-two 8  |2|2|4|
-|Game-9      |1|1|2|
+|Game 9      |1|1|2|
 |Turn-three 9|3|3|6|
 
 # Vira with folding
@@ -273,16 +273,16 @@ values are different for a declarer who's exchanged twice:
 
 |Bid         |w|l|c|2nd exch.   |w|l| c|
 |------------|-|-|-|------------|-|-|--|
-|Game-6      |1|1|2|            |0|3| 5|
+|Game 6      |1|1|2|            |0|3| 5|
 |Turn-one 6  |1|1|2|            |0|3| 5|
-|Game-7      |1|1|2|            |0|3| 5|
+|Game 7      |1|1|2|            |0|3| 5|
 |Turn-two 6  |1|2|4|            |0|6|10|
 |Turn-one 7  |1|1|2|            |0|3| 5|
-|Game-8      |1|1|2|            |0|3| 5|
+|Game 8      |1|1|2|            |0|3| 5|
 |Turn-two 7  |1|2|4|            |0|6|10|
 |Turn-one 8  |2|1|2|            |0|3| 5|
 |Turn-two 8  |2|2|4|            |0|6|10|
-|Game-9      |1|1|2|            |0|3| 5|
+|Game 9      |1|1|2|            |0|3| 5|
 |Turn-three 9|3|3|6|            |1|9|15|
 
 # Vira with misère
@@ -350,24 +350,24 @@ possible.
 
 |Bid         |w|l|c|2nd exch.   |w|l| c|
 |------------|-|-|-|------------|-|-|--|
-|Game-6      |1|1|2|            |0|3| 5|
+|Game 6      |1|1|2|            |0|3| 5|
 |Turn-one 6  |1|1|2|            |0|3| 5|
-|Game-7      |1|1|2|            |0|3| 5|
+|Game 7      |1|1|2|            |0|3| 5|
 |Turn-two 6  |1|2|4|            |0|6|10|
 |Gök         |1|2|4|            |-|-| -|
 |Turn-one 7  |1|1|2|            |0|3| 5|
-|Misère-1    |1|1|2|            |0|3| 5|
-|Game-8      |1|1|2|            |0|3| 5|
+|Misère 1    |1|1|2|            |0|3| 5|
+|Game 8      |1|1|2|            |0|3| 5|
 |Turn-two 7  |1|2|4|            |0|6|10|
 |Turn-one 8  |2|1|2|            |0|3| 5|
-|Misère-2    |1|1|2|            |0|3| 5|
+|Misère 2    |1|1|2|            |0|3| 5|
 |Turn-two 8  |2|2|4|            |0|6|10|
-|Misère-3    |1|1|2|            |0|3| 5|
-|Game-9      |1|1|2|            |0|3| 5|
-|Misère-4    |1|1|2|            |0|3| 5|
+|Misère 3    |1|1|2|            |0|3| 5|
+|Game 9      |1|1|2|            |0|3| 5|
+|Misère 4    |1|1|2|            |0|3| 5|
 |Turn-three 9|3|3|6|            |1|9|15|
-|Misère-5    |1|1|2|            |0|3| 5|
-|Misère-6    |1|1|2|            |0|3| 5|
+|Misère 5    |1|1|2|            |0|3| 5|
+|Misère 6    |1|1|2|            |0|3| 5|
 
 ## Player payments
 
@@ -376,24 +376,24 @@ don't apply.
 
 |Bid         |*|c| p|
 |------------|-|-|--|
-|Game-6      |0|0| 1|
+|Game 6      |0|0| 1|
 |Turn-one 6  |0|0| 1|
-|Game-7      |0|0| 1|
+|Game 7      |0|0| 1|
 |Turn-two 6  |0|1| 1|
 |Gök         |0|-| -|
 |Turn-one 7  |0|1| 1|
-|Misère-1    |0|-| -|
-|Game-8      |0|1| 1|
+|Misère 1    |0|-| -|
+|Game 8      |0|1| 1|
 |Turn-two 7  |1|1| 3|
 |Turn-one 8  |1|1| 3|
-|Misère-2    |0|-| -|
+|Misère 2    |0|-| -|
 |Turn-two 8  |1|3| 5|
-|Misère-3    |0|-| -|
-|Game-9      |1|1| 3|
-|Misère-4    |1|-| -|
+|Misère 3    |0|-| -|
+|Game 9      |1|1| 3|
+|Misère 4    |1|-| -|
 |Turn-three 9|3|5|11|
-|Misère-5    |1|-| -|
-|Misère-6    |1|-| -|
+|Misère 5    |1|-| -|
+|Misère 6    |1|-| -|
 
 # Vira with choice bids
 
@@ -438,65 +438,65 @@ forces the declarer to play a positive game.
 ## Pool payments
 
 Since Gask involves taking the entire stock, there is no possibility
-for a second exchange. Gask-5 is ranked *higher* than Gask-6.
+for a second exchange. Gask 5 is ranked *higher* than Gask 6.
 
 |Bid         |w|l|c|2nd exch.   |w|l| c|
 |------------|-|-|-|------------|-|-|--|
-|Game-6      |1|1|2|            |0|3| 5|
+|Game 6      |1|1|2|            |0|3| 5|
 |Turn-one 6  |1|1|2|            |0|3| 5|
-|Game-7      |1|1|2|            |0|3| 5|
+|Game 7      |1|1|2|            |0|3| 5|
 |Turn-two 6  |1|2|4|            |0|6|10|
-|Gask-0      |1|1|2|            |-|-| -|
+|Gask 0      |1|1|2|            |-|-| -|
 |Gök         |1|2|4|            |-|-| -|
 |Turn-one 7  |1|1|2|            |0|3| 5|
-|Misère-1    |1|1|2|            |0|3| 5|
-|Gask-1      |1|1|2|            |-|-| -|
-|Game-8      |1|1|2|            |0|3| 5|
+|Misère 1    |1|1|2|            |0|3| 5|
+|Gask 1      |1|1|2|            |-|-| -|
+|Game 8      |1|1|2|            |0|3| 5|
 |Turn-two 7  |1|2|4|            |0|6|10|
 |Turn-one 8  |2|1|2|            |0|3| 5|
-|Misère-2    |1|1|2|            |0|3| 5|
-|Gask-2      |1|1|2|            |-|-| -|
+|Misère 2    |1|1|2|            |0|3| 5|
+|Gask 2      |1|1|2|            |-|-| -|
 |Turn-two 8  |2|2|4|            |0|6|10|
-|Misère-3    |1|1|2|            |0|3| 5|
-|Gask-3      |1|1|2|            |-|-| -|
-|Game-9      |1|1|2|            |0|3| 5|
-|Misère-4    |1|1|2|            |0|3| 5|
-|Gask-4      |1|1|2|            |-|-| -|
+|Misère 3    |1|1|2|            |0|3| 5|
+|Gask 3      |1|1|2|            |-|-| -|
+|Game 9      |1|1|2|            |0|3| 5|
+|Misère 4    |1|1|2|            |0|3| 5|
+|Gask 4      |1|1|2|            |-|-| -|
 |Turn-three 9|3|3|6|            |1|9|15|
-|Misère-5    |1|1|2|            |0|3| 5|
-|Gask-6      |1|1|2|            |-|-| -|
-|Misère-6    |1|1|2|            |0|3| 5|
-|Gask-5      |1|1|2|            |-|-| -|
+|Misère 5    |1|1|2|            |0|3| 5|
+|Gask 6      |1|1|2|            |-|-| -|
+|Misère 6    |1|1|2|            |0|3| 5|
+|Gask 5      |1|1|2|            |-|-| -|
 
 ## Player payments
 
 |Bid         |*|c| p|
 |------------|-|-|--|
-|Game-6      |0|0| 1|
+|Game 6      |0|0| 1|
 |Turn-one 6  |0|0| 1|
-|Game-7      |0|0| 1|
+|Game 7      |0|0| 1|
 |Turn-two 6  |0|1| 1|
-|Gask-0      |0|0| 1|
+|Gask 0      |0|0| 1|
 |Gök         |0|-| -|
 |Turn-one 7  |0|1| 1|
-|Misère-1    |0|-| -|
-|Gask-1      |0|0| 1|
-|Game-8      |0|1| 1|
+|Misère 1    |0|-| -|
+|Gask 1      |0|0| 1|
+|Game 8      |0|1| 1|
 |Turn-two 7  |1|1| 3|
 |Turn-one 8  |1|1| 3|
-|Misère-2    |0|-| -|
-|Gask-2      |0|1| 1|
+|Misère 2    |0|-| -|
+|Gask 2      |0|1| 1|
 |Turn-two 8  |1|3| 5|
-|Misère-3    |0|-| -|
-|Gask-3      |0|1| 2|
-|Game-9      |1|1| 3|
-|Misère-4    |1|-| -|
-|Gask-4      |1|1| 3|
+|Misère 3    |0|-| -|
+|Gask 3      |0|1| 2|
+|Game 9      |1|1| 3|
+|Misère 4    |1|-| -|
+|Gask 4      |1|1| 3|
 |Turn-three 9|3|5|11|
-|Misère-5    |1|-| -|
-|Gask-6      |1|2| 4|
-|Misère-6    |1|-| -|
-|Gask-5      |1|3| 5|
+|Misère 5    |1|-| -|
+|Gask 6      |1|2| 4|
+|Misère 6    |1|-| -|
+|Gask 5      |1|3| 5|
 
 # Vira with gök conventions
 
@@ -566,79 +566,79 @@ the entire talon, so neither one can perform a second exchange.
 
 |Bid         |w|l|c|2nd exch.   |w|l| c|
 |------------|-|-|-|------------|-|-|--|
-|Game-6      |1|1|2|            |0|3| 5|
+|Game 6      |1|1|2|            |0|3| 5|
 |Turn-one 6  |1|1|2|            |0|3| 5|
-|Game-7      |1|1|2|            |0|3| 5|
+|Game 7      |1|1|2|            |0|3| 5|
 |Turn-two 6  |1|2|4|            |0|6|10|
-|Gask-0      |1|1|2|            |-|-| -|
+|Gask 0      |1|1|2|            |-|-| -|
 |Gök         |1|2|4|            |-|-| -|
 |Turn-one 7  |1|1|2|            |0|3| 5|
-|Misère-1    |1|1|2|            |0|3| 5|
-|Gask-1      |1|1|2|            |-|-| -|
-|Game-8      |1|1|2|            |0|3| 5|
+|Misère 1    |1|1|2|            |0|3| 5|
+|Gask 1      |1|1|2|            |-|-| -|
+|Game 8      |1|1|2|            |0|3| 5|
 |Turn-two 7  |1|2|4|            |0|6|10|
 |Turn-one 8  |2|1|2|            |0|3| 5|
-|Misère-2    |1|1|2|            |0|3| 5|
-|Gask-2      |1|1|2|            |-|-| -|
-|Solo-6      |1|1|2|            |-|-| -|
+|Misère 2    |1|1|2|            |0|3| 5|
+|Gask 2      |1|1|2|            |-|-| -|
+|Solo 6      |1|1|2|            |-|-| -|
 |Turn-two 8  |2|2|4|            |0|6|10|
-|Misère-3    |1|1|2|            |0|3| 5|
-|Gask-3      |1|1|2|            |-|-| -|
-|Game-9      |1|1|2|            |0|3| 5|
-|Misère-4    |1|1|2|            |0|3| 5|
-|Gask-4      |1|1|2|            |-|-| -|
+|Misère 3    |1|1|2|            |0|3| 5|
+|Gask 3      |1|1|2|            |-|-| -|
+|Game 9      |1|1|2|            |0|3| 5|
+|Misère 4    |1|1|2|            |0|3| 5|
+|Gask 4      |1|1|2|            |-|-| -|
 |Turn-three 9|3|3|6|            |1|9|15|
-|Misère-5    |1|1|2|            |0|3| 5|
-|Gask-6      |1|1|2|            |-|-| -|
-|Solo-7      |1|1|2|            |-|-| -|
-|Misère-6    |1|1|2|            |0|3| 5|
-|Gask-5      |1|1|2|            |-|-| -|
-|Solo-8      |1|1|2|            |-|-| -|
+|Misère 5    |1|1|2|            |0|3| 5|
+|Gask 6      |1|1|2|            |-|-| -|
+|Solo 7      |1|1|2|            |-|-| -|
+|Misère 6    |1|1|2|            |0|3| 5|
+|Gask 5      |1|1|2|            |-|-| -|
+|Solo 8      |1|1|2|            |-|-| -|
 |Vira        |1|1|2|            |-|-| -|
-|Solo-9      |1|1|2|            |-|-| -|
-|Solo-10     |1|1|2|            |-|-| -|
-|Solo-11     |1|1|2|            |-|-| -|
-|Solo-12     |1|1|2|            |-|-| -|
-|Solo-13     |1|1|2|            |-|-| -|
+|Solo 9      |1|1|2|            |-|-| -|
+|Solo 10     |1|1|2|            |-|-| -|
+|Solo 11     |1|1|2|            |-|-| -|
+|Solo 12     |1|1|2|            |-|-| -|
+|Solo 13     |1|1|2|            |-|-| -|
 
 ## Player payments
 
 |Bid         |* |c  | p |
 |------------|--|---|---|
-|Game-6      |0 |0  | 1 |
+|Game 6      |0 |0  | 1 |
 |Turn-one 6  |0 |0  | 1 |
-|Game-7      |0 |0  | 1 |
+|Game 7      |0 |0  | 1 |
 |Turn-two 6  |0 |1  | 1 |
-|Gask-0      |0 |0  | 1 |
+|Gask 0      |0 |0  | 1 |
 |Gök         |0 |-  | - |
 |Turn-one 7  |0 |1  | 1 |
-|Misère-1    |0 |-  | - |
-|Gask-1      |0 |0  | 1 |
-|Game-8      |0 |1  | 1 |
+|Misère 1    |0 |-  | - |
+|Gask 1      |0 |0  | 1 |
+|Game 8      |0 |1  | 1 |
 |Turn-two 7  |1 |1  | 3 |
 |Turn-one 8  |1 |1  | 3 |
-|Misère-2    |0 |-  | - |
-|Gask-2      |0 |1  | 1 |
-|Solo-6      |0 |1  | 1 |
+|Misère 2    |0 |-  | - |
+|Gask 2      |0 |1  | 1 |
+|Solo 6      |0 |1  | 1 |
 |Turn-two 8  |1 |3  | 5 |
-|Misère-3    |0 |-  | - |
-|Gask-3      |0 |1  | 2 |
-|Game-9      |1 |1  | 3 |
-|Misère-4    |1 |-  | - |
-|Gask-4      |1 |1  | 3 |
+|Misère 3    |0 |-  | - |
+|Gask 3      |0 |1  | 2 |
+|Game 9      |1 |1  | 3 |
+|Misère 4    |1 |-  | - |
+|Gask 4      |1 |1  | 3 |
 |Turn-three 9|3 |5  |11 |
-|Misère-5    |1 |-  | - |
-|Gask-6      |1 |2  | 4 |
-|Solo-7      |0 |1  | 2 |
-|Misère-6    |1 |-  | - |
-|Gask-5      |1 |3  | 5 |
-|Solo-8      |1 |2  | 4 |
+|Misère 5    |1 |-  | - |
+|Gask 6      |1 |2  | 4 |
+|Solo 7      |0 |1  | 2 |
+|Misère 6    |1 |-  | - |
+|Gask 5      |1 |3  | 5 |
+|Solo 8      |1 |2  | 4 |
 |Vira        |2 |4  | 8 |
-|Solo-9      |2 |4  | 8 |
-|Solo-10     |4 |8  |16 |
-|Solo-11     |8 |16 |32 |
-|Solo-12     |16|32 |64 |
-|Solo-13     |32|64 |128|
+|Solo 9      |2 |4  | 8 |
+|Solo 10     |4 |8  |16 |
+|Solo 11     |8 |16 |32 |
+|Solo 12     |16|32 |64 |
+|Solo 13     |32|64 |128|
 
 # Vira with exceptional bids
 
@@ -695,91 +695,91 @@ each other their cards and discuss their exchange.
 
 |Bid                                    |w|l|c|2nd exch.   |w|l| c|
 |---------------------------------------|-|-|-|------------|-|-|--|
-|Game-6                                 |1|1|2|            |0|3| 5|
+|Game 6                                 |1|1|2|            |0|3| 5|
 |Turn-one 6                             |1|1|2|            |0|3| 5|
-|Game-7                                 |1|1|2|            |0|3| 5|
+|Game 7                                 |1|1|2|            |0|3| 5|
 |Turn-two 6                             |1|2|4|            |0|6|10|
-|Gask-0                                 |1|1|2|            |-|-| -|
+|Gask 0                                 |1|1|2|            |-|-| -|
 |Gök                                    |1|2|4|            |-|-| -|
 |Turn-one 7                             |1|1|2|            |0|3| 5|
-|Misère-1                               |1|1|2|            |0|3| 5|
-|Gask-1                                 |1|1|2|            |-|-| -|
-|Game-8                                 |1|1|2|            |0|3| 5|
+|Misère 1                               |1|1|2|            |0|3| 5|
+|Gask 1                                 |1|1|2|            |-|-| -|
+|Game 8                                 |1|1|2|            |0|3| 5|
 |Turn-two 7                             |1|2|4|            |0|6|10|
 |Turn-one 8                             |2|1|2|            |0|3| 5|
-|Misère-2                               |1|1|2|            |0|3| 5|
-|Gask-2                                 |1|1|2|            |-|-| -|
-|Solo-6                                 |1|1|2|            |-|-| -|
+|Misère 2                               |1|1|2|            |0|3| 5|
+|Gask 2                                 |1|1|2|            |-|-| -|
+|Solo 6                                 |1|1|2|            |-|-| -|
 |Turn-two 8                             |2|2|4|            |0|6|10|
-|Misère-3                               |1|1|2|            |0|3| 5|
-|Gask-3                                 |1|1|2|            |-|-| -|
-|Game-9                                 |1|1|2|            |0|3| 5|
-|Misère-4                               |1|1|2|            |0|3| 5|
-|Gask-4                                 |1|1|2|            |-|-| -|
+|Misère 3                               |1|1|2|            |0|3| 5|
+|Gask 3                                 |1|1|2|            |-|-| -|
+|Game 9                                 |1|1|2|            |0|3| 5|
+|Misère 4                               |1|1|2|            |0|3| 5|
+|Gask 4                                 |1|1|2|            |-|-| -|
 |Turn-three 9                           |3|3|6|            |1|9|15|
-|Misère-5                               |1|1|2|            |0|3| 5|
-|Gask-6                                 |1|1|2|            |-|-| -|
-|Solo-7                                 |1|1|2|            |-|-| -|
-|Misère-6                               |1|1|2|            |0|3| 5|
-|Gask-5                                 |1|1|2|            |-|-| -|
-|Solo-8                                 |1|1|2|            |-|-| -|
+|Misère 5                               |1|1|2|            |0|3| 5|
+|Gask 6                                 |1|1|2|            |-|-| -|
+|Solo 7                                 |1|1|2|            |-|-| -|
+|Misère 6                               |1|1|2|            |0|3| 5|
+|Gask 5                                 |1|1|2|            |-|-| -|
+|Solo 8                                 |1|1|2|            |-|-| -|
 |Vira                                   |1|1|2|            |-|-| -|
 |Solo Petite Misère                     |1|1|2|            |-|-| -|
-|Solo-9                                 |1|1|2|            |-|-| -|
+|Solo 9                                 |1|1|2|            |-|-| -|
 |Solo Grande Misère                     |1|1|2|            |-|-| -|
-|Solo-10                                |1|1|2|            |-|-| -|
+|Solo 10                                |1|1|2|            |-|-| -|
 |Solo Petite Misère Ouverte             |1|1|2|            |-|-| -|
 |Solo Petite Misère Ouverte Royale      |1|1|2|            |-|-| -|
-|Solo-11                                |1|1|2|            |-|-| -|
+|Solo 11                                |1|1|2|            |-|-| -|
 |Solo Grande Misère Ouverte             |1|1|2|            |-|-| -|
 |Solo Grande Misère Ouverte Royale      |1|1|2|            |-|-| -|
-|Solo-12                                |1|1|2|            |-|-| -|
-|Solo-13                                |1|1|2|            |-|-| -|
+|Solo 12                                |1|1|2|            |-|-| -|
+|Solo 13                                |1|1|2|            |-|-| -|
 
 ## Player payments
 
 |Bid                              |*  |c  | p |
 |---------------------------------|-- |---|---|
-|Game-6                           |0  |0  | 1 |
+|Game 6                           |0  |0  | 1 |
 |Turn-one 6                       |0  |0  | 1 |
-|Game-7                           |0  |0  | 1 |
+|Game 7                           |0  |0  | 1 |
 |Turn-two 6                       |0  |1  | 1 |
-|Gask-0                           |0  |0  | 1 |
+|Gask 0                           |0  |0  | 1 |
 |Gök                              |0  |-  | - |
 |Turn-one 7                       |0  |1  | 1 |
-|Misère-1                         |0  |-  | - |
-|Gask-1                           |0  |0  | 1 |
-|Game-8                           |0  |1  | 1 |
+|Misère 1                         |0  |-  | - |
+|Gask 1                           |0  |0  | 1 |
+|Game 8                           |0  |1  | 1 |
 |Turn-two 7                       |1  |1  | 3 |
 |Turn-one 8                       |1  |1  | 3 |
-|Misère-2                         |0  |-  | - |
-|Gask-2                           |0  |1  | 1 |
-|Solo-6                           |0  |1  | 1 |
+|Misère 2                         |0  |-  | - |
+|Gask 2                           |0  |1  | 1 |
+|Solo 6                           |0  |1  | 1 |
 |Turn-two 8                       |1  |3  | 5 |
-|Misère-3                         |0  |-  | - |
-|Gask-3                           |0  |1  | 2 |
-|Game-9                           |1  |1  | 3 |
-|Misère-4                         |1  |-  | - |
-|Gask-4                           |1  |1  | 3 |
+|Misère 3                         |0  |-  | - |
+|Gask 3                           |0  |1  | 2 |
+|Game 9                           |1  |1  | 3 |
+|Misère 4                         |1  |-  | - |
+|Gask 4                           |1  |1  | 3 |
 |Turn-three 9                     |3  |5  |11 |
-|Misère-5                         |1  |-  | - |
-|Gask-6                           |1  |2  | 4 |
-|Solo-7                           |0  |1  | 2 |
-|Misère-6                         |1  |-  | - |
-|Gask-5                           |1  |3  | 5 |
-|Solo-8                           |1  |2  | 4 |
+|Misère 5                         |1  |-  | - |
+|Gask 6                           |1  |2  | 4 |
+|Solo 7                           |0  |1  | 2 |
+|Misère 6                         |1  |-  | - |
+|Gask 5                           |1  |3  | 5 |
+|Solo 8                           |1  |2  | 4 |
 |Vira                             |2  |4  | 8 |
 |Solo Petite Misere               |2  |-  | - |
-|Solo-9                           |2  |4  | 8 |
+|Solo 9                           |2  |4  | 8 |
 |Solo Grande Misere               |4  |-  | - |
-|Solo-10                          |4  |8  |16 |
+|Solo 10                          |4  |8  |16 |
 |Solo Petite Misere Ouverte       |8  |-  | - |
 |Solo Petite Misere Ouverte Royale|16 |-  | - |
-|Solo-11                          |8  |16 |32 |
-|Solo Petite Misere Ouverte       |24 |-  | - |
-|Solo Petite Misere Ouverte Royale|32 |-  | - |
-|Solo-12                          |16 |32 |64 |
-|Solo-13                          |32 |64 |128|
+|Solo 11                          |8  |16 |32 |
+|Solo Grande Misere Ouverte       |24 |-  | - |
+|Solo Grande Misere Ouverte Royale|32 |-  | - |
+|Solo 12                          |16 |32 |64 |
+|Solo 13                          |32 |64 |128|
 
 # Vira strategy and background
 
@@ -793,6 +793,7 @@ are integral to the game itself.
 
 For further research, there are two English-language documents that I've
 used as source material for this account:
+
 - [the Vira page at Pagat.com](https://www.pagat.com/boston/vira.html)
 - [Raymond Gallardo's account on BoardGameGeek](https://boardgamegeek.com/thread/2158558/how-play-vira)
 
