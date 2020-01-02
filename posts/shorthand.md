@@ -63,7 +63,7 @@ shorthand][fk]. Forkner begins with ordinary, cursive, longhand writing,
 and then replaces the letters with strokes and shapes representing sounds.
 
 [fk]: https://www.reddit.com/r/shorthand/wiki/forkner-resources
-![Some Forkner Instruction](https://www.dropbox.com/s/kupts8rzb52y93d/forkner-10.gif?raw=1)
+![Some Forkner Instruction](https://uc464c443ce564e341650be737a3.dl.dropboxusercontent.com/cd/0/inline/AvKGcO6vdlF3eEBaGMncu4d-8MqdBnDaXrGG49_jQuWeiNMZXdH7bpmEMhzYONvRBSz-3-NmFNgJMPY8HahFjXGs2NsTv9CvnaMFggq2S5VVUg/file)
 
 The resulting system is vastly less efficient that Pitman or Gregg,
 but much easier to learn. Easier to write, as you can use normal longhand
@@ -77,7 +77,7 @@ out into ticks when I was writing them. I also almost never combine
 multiple small words (qv. "may be able", above) into a single outline; I find
 them very difficult to decipher and of fairly limited utility.
 
-![F-Minus, My Forkner](https://www.dropbox.com/s/yyf31dvt1eaxozb/f-minus-1280.png?raw=1)
+![F-Minus, My Forkner](https://uce08357c24d1c388d52ca2d384f.dl.dropboxusercontent.com/cd/0/inline/AvK4D1mH_rVrAiyDV1CFdvo-KKCHGOC10SzZ6uPS5NTYubb88Ma8srlfnnwg0ya3CzoDMrBO6Et5nQ_oIxxZQhX8siHqCjgVjstd2hQZvGgKOg/file)
 
 Some other changes were more substantive. The primary complaint I have
 with Forkner is that which it doesn't bother to remove from longhand
@@ -150,7 +150,7 @@ easier for me to remember something I came up with than something I read
 out of a book. And this way I could try to optimize for the qualities
 I find most important, especially that concept of error tolerance.
 
-![My New, Untitled System](https://www.dropbox.com/s/4dlv40hzi968v0u/something-new-1280.png?raw=1)
+![My New, Untitled System](https://uc6c2214987447a9f4736a764851.dl.dropboxusercontent.com/cd/0/inline/AvK-0xOMpI1opIl471Q0fsPHKE-Ssr8dQjPRKObzN5pymwk5e0OpmB1CDGsp8l36wZ8ul9tbxXo6Z3Uo-kgYYlam5mbpyybGZUx1TRrQ8tH89w/file)
 
 So for the last couple of months I've been putting together a
 Gregg/Pitman-style system for myself. The first thing to know is that
@@ -185,7 +185,7 @@ long and short, NE/SW-oriented in long and short.
 
 [curves]: https://doyouremember.com/38261/remember-gregg-shorthand-great-taking-notes-college-long-ago-swipe
 
-![Basic Inventory of a New Shorthand System](https://www.dropbox.com/s/mst5zor7l9qv7sb/inventory-1280.png?raw=1)
+![Basic Inventory of a New Shorthand System](https://uc3950ffc60dbc554c82f5dcb8ca.dl.dropboxusercontent.com/cd/0/inline/AvJVEAcflEuhqmau-Ig_QhMpLPE7Y5x98tjC-8vunEQmhvKpJC-rX0n8gl1kI1SedfsPC29xDedIJS9B0n1iMJtEeqiIG_oj0H1fynsrgqfBzQ/file)
 
 We extend this meager inventory predictably, with the vocalizing hatch
 mark that already showed up in F-Minus. So a short curve is /s/ and a long
@@ -208,7 +208,7 @@ a consonant sequence without an intervening vowel---should it appear
 internal to a syllable or at a syllable boundary---is to control the
 *relative orientation* of the following stroke.
 
-![Illustration of blends with *s* and *t*](https://www.dropbox.com/s/tf5rhhhdu9yfstl/blends-1254.png?raw=1)
+![Illustration of blends with *s* and *t*](https://uc1cc0ace3f682d1f153b5790766.dl.dropboxusercontent.com/cd/0/inline/AvJfOHdreQdeMWUHoowEP2nGL3rX2ETSPsv9rTc82HuiD_uh6XhU9ibEvXZaxdyrgnp-jzaGom7yOawMle4t8rmSid_BVLPGsXqqmH5bKXlIjg/file)
 
 I'll give an example: let's say you have an *s* followed by a *t*,
 as mentioned above. That will be a short stroke followed by a short,
