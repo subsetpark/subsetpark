@@ -6,7 +6,7 @@ We often find when learning card games that they consist of what could be
 called *first-order rules*, which are the core rules of a game, or the
 ones that lend it its distinctive flavor, a *second-order* ones, which
 probably arose as correctives or adjustments to styles of play under the
-first order[^1]. This sort of thing is particularly.  difficult for those
+first order[^1]. This sort of thing is particularly difficult for those
 of us who learn our card games out of books; whereas, in a traditional
 folk setting, a new player would presumably start out at a simplified
 level and additional dimensions would be introduced as they got a handle
