@@ -38,6 +38,18 @@ code {
     color: black;
 }
 
+p code {
+    background-color: #FFFFEA;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 16px;
+    color: #333;
+    background-color: #FFFFEA;
+    border: none;
+}
+
 figure {
     padding-top: 30px;
     padding-bottom: 30px;
