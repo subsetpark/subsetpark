@@ -8,7 +8,7 @@ data(_) ->
        blog => {eterm, "subsetpark.config"},
        posts => {markdown, "posts/*.md"},
        pages => {markdown, "pages/*.md"},
-       about => {markdown, "about.md"}
+       about => {markdown, "front.md"}
       }.
 
 site(Data) ->
@@ -38,6 +38,9 @@ site(Data) ->
 
        "site/images/*.png" =>
        {files, "images/*.png"},
+
+       "site/images/*.gif" =>
+       {files, "images/*.gif"},
 
        "site/static/*.html" =>
        {files, "assets/*.html"},
