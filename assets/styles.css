@@ -4,7 +4,6 @@ body {
     padding-bottom: 60px;
     font-size: 16px;
     color: #222;
-    background: #FFFFFD;
     background-color: #FFFFFD;
 }
 
@@ -18,11 +17,7 @@ a:hover {
 }
 
 pre {
-    background-color: #FFFFEA;
-}
-
-.hljs {
-    background-color: #FFFFEA;
+    background-color: #FFFFFD;
 }
 
 h1 {
@@ -41,7 +36,6 @@ h3 {
 code {
     font-family: "Iosevka", monospace;
     color: black;
-    background-color: #ffffea;
 }
 
 figure {
