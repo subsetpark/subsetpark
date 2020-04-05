@@ -4,13 +4,13 @@ status: post
 
 Henry Sweet's [Current Shorthand][current][^1] is a historical curiosity
 twice over: once because very few people today need to learn shorthand
-at all or event know what it is; twice because as shorthands go, it's
+at all or even know what it is; twice because as shorthands go, it's
 completely obscure. I learned about it because the surprisingly active
 and enjoyable [Shorthand Subreddit][subreddit] is populated by people who
 seem to really enjoy spelunking in digital archives for self-published
 books from the late 19th century, the heyday of shorthand, when there
 was actual money in designing and publicising a shorthand system of
-one's own devising.
+one's own.
 
 [current]: https://en.wikipedia.org/wiki/Current_Shorthand
 [subreddit]: https://www.reddit.com/r/shorthand/
@@ -95,7 +95,7 @@ realized as a schwa.
     sound in your best British accent. In practice, this becomes quite
     natural.
 
-The basic sounds can, of course, be broken up into consonants and vowels.
+The basic sounds can, of course, be divided into consonants and vowels.
 
 # Consonants
 
@@ -147,7 +147,7 @@ Arranged thus it's hopefully evident that there's an order to what sign
 goes with what sound. Sweet is particularly hot on the correspondence
 between where *in the mouth* a sound is articulated and where it's placed,
 vertically, on the page (the man was a phonetician), which I think is
-less than helpful; however, especially in the upper-left of the matrix,
+less helpful; however, especially in the upper-left of the matrix,
 it hangs together ok.
 
 The basic strokes stand for *unvoiced* sounds, and the curve-strokes
@@ -178,7 +178,7 @@ Loops can have the same heights as strokes; however, there are only *two* types 
   forms a loop downwards, and continues to the upper-right:
   ![](../images/current/short-inverted-loop.png)
 
-\\[2 \text{ styles of loop} × 4 \text{ heights} = 16 \text{ loops:}\\]
+\\[2 \text{ styles of loop} × 4 \text{ heights} = 8 \text{ loops:}\\]
 
 |             |loop                                      |inverted loop                                      |
 |---------    |------------------------------------------|-------------------------------------------------- |
@@ -197,8 +197,8 @@ the bottom two, we swap over. Sweet's rationale for this is that /sh/
 is more common, and that the low inverted loop is easier to write. I'm
 sure he's right, but I don't know if it's worth the added cognitive load.
 
-The tall loops are left for blends involving /n/ + the sound made by their
-low counterparts. These are more useful than they seem at first glance,
+The tall loops are left for blends involving /n/ + /the sound made by their
+low counterparts/. These are more useful than they seem at first glance,
 since in practice /nsh/ also works for /ntsh/ (as in "inch") and /nzh/
 also works for /ndzh/ (as in "change").
 
