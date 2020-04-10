@@ -39,6 +39,9 @@ site(Data) ->
        "site/images/*.png" =>
        {files, "images/*.png"},
 
+       "site/images/current/*.png" =>
+       {files, "images/current/*.png"},
+
        "site/images/*.gif" =>
        {files, "images/*.gif"},
 
