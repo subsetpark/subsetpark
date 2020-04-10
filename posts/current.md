@@ -212,6 +212,8 @@ The "canonical" form of /h/, so to speak, is an elongated low ring.
 There are two sounds, voiced /th/ and unvoiced /dh/, represented by
 "th". They are both short.
 
+All three are written starting from the top.
+
 
 |             |ring                                       |half ring                                          |
 |---------    |------------------------------------------ |-------------------------------------------------- |
@@ -226,6 +228,8 @@ as a long diagonal stroke beginning below the line of writing, like so:
 
 The semivowels (or glides) are both written with what Sweet calls the
 "flat curve": ![](../images/current/low-flat-curve.png)
+
+These are also started from the top.
 
 |             |flat curve                                     |
 |---------    |------------------------------------------     |
@@ -252,7 +256,7 @@ preceded by a vowel, while the latter is generally used when it is.
 
 The vowels of Current are... numerous. The principle of their general
 use is the same as most other phonetic shorthands: in writing, leave
-them out whenever possible. A word written like `fnctshn` or `flm`
+them out whenever possible. A word written like `fnctshn` or `cmptr`
 is often completely intelligible, especially written in context.
 
 This principle is particularly important in light of one of Sweet's
@@ -263,9 +267,12 @@ unstressed vowel in the middle of a word.
 
 This is perfectly sensible and more-or-less the default, as I say;
 however, some of the more finicky elements of the shorthand arise when
-Sweet tries to ensure that principle's inverse: the *presence* of a short,
-connecting stroke should imply the presence of an unstressed vowel in
-the middle of a word. I say good luck: in order to make your outlines
+Sweet tries to ensure that principle's inverse: the *presence* of a
+short, connecting stroke should imply the presence of an unstressed
+vowel in the middle of a word. This would require that we strictly draw
+two consonants without any intervening stroke if there's no vowel (or
+otherwise use a consonant blend, which are very plentiful and pretty
+crucial in practice). I say good luck: in order to make your outlines
 intelligible, you'll sometimes have to have *some* space between two
 consonants even if there's no vowel between them. Don't sweat it.
 
@@ -275,7 +282,7 @@ straightforward but archaic; but then again, it's not very practical to
 require the interested reader to know IPA as well. I'm going to try to
 represent them with words that obviously demonstrate them, after [John C. Wells][lexical-sets].
 
-[lexical-sets]: https://en.wikipedia.org/wiki/English_phonology
+[lexical-sets]: https://en.wikipedia.org/wiki/Lexical_set
 
 ## Positions
 
@@ -357,6 +364,10 @@ Both the *down* and the *high-mid* versions deserve a little explanation:
 - *double down-hooks* represent the same sound as their up-hook counterparts, but with a schwa /ə/ at the end.[^RP2]
 - *high-mid double hooks* represent a /u/ sound, just like the low-mid ones, but with a /y/ in front.
 
+The distinction between the short /yu/, like the first vowel in "unite",
+and the long /yuu/, like the vowel in "use", is often subtle enough to
+be disregarded when writing.
+
 ## Vowel loops
 
 The next class of vowel symbol is the *(little) loop*. It's about the
@@ -421,3 +432,7 @@ Needless to say, there are many elements in the latter part of the section
 that are arranged systematically and demonstrate productive principles
 (rather than just being bags of arbitrarily drawn words). In time I hope
 to get those together too.
+
+----
+
+*this article has been amended based on feedback from the kind folks at [r/shorthand](https://www.reddit.com/r/shorthand/comments/fvnr50/blog_post_a_curriculum_of_phonetic_current/)*.
