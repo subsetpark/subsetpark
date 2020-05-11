@@ -17,8 +17,10 @@ data(_) ->
 
 site(Data) ->
     Notes = notes(Data),
-    NotesWithContents = lists:zip(Notes,
-                                  file_contents(Notes)),
+    Notes2 = with_contents(Notes),
+    Notes3 = with_file_tag(Notes2),
+
+    io:format("data: ~n~p~n", [Notes3]),
     #{"site/index.html" =>
           {template, "templates/index.html", #{site_root => ""}},
       "site/feed.xml" =>
@@ -38,8 +40,8 @@ site(Data) ->
           {template_map, "templates/post.html",
            {post, posts(Data)}, #{site_root => "../"}},
       "site/notes/{{note.topic|slugify}}.html" =>
-          {template_map, "templates/note.html", {note, Notes},
-           #{site_root => "../", all_notes => NotesWithContents}},
+          {template_map, "templates/note.html", {note, Notes3},
+           #{site_root => "../", all_notes => Notes3}},
       "site/assets/*.css" => {files, "assets/*.css"},
       "site/images/*.png" => {files, "images/*.png"},
       "site/images/current/*.png" =>
@@ -90,6 +92,22 @@ pages(Data) -> plist:value(pages, Data).
 
 notes(Data) -> plist:value(notes, Data).
 
+with_contents(Notes) ->
+    [with_contents_1(V1) || V1 <- Notes].
+
+with_contents_1(NoteMeta) ->
+    FileName = proplists:get_value('__file__', NoteMeta),
+    {ok, Contents} = file:read_file(FileName),
+    [{contents, Contents} | NoteMeta].
+
+with_file_tag(Notes) ->
+    [with_file_tag_1(V1) || V1 <- Notes].
+
+with_file_tag_1(NoteMeta) ->
+    FileName = proplists:get_value('__file__', NoteMeta),
+    BaseName = filename:basename(FileName, ".md"),
+    [{topic, BaseName} | NoteMeta].
+
 file_contents(Files) ->
     FileNames = [proplists:get_value('__file__', F)
                  || F <- Files],
@@ -99,7 +117,10 @@ file_contents_1(FileName) ->
     {ok, Contents} = file:read_file(FileName), Contents.
 
 note_topic(NoteMeta) ->
-    proplists:get_value("topic", NoteMeta).
+    proplists:get_value(topic, NoteMeta).
+
+note_content(NoteMeta) ->
+    proplists:get_value(content, NoteMeta).
 
 %
 % Custom Filters
@@ -126,7 +147,8 @@ truncatechars([String], N) ->
 % Private for filters/tags
 %
 
-is_related({NoteMeta, NoteContent}, CP, Topic) ->
+is_related(NoteMeta, CP, Topic) ->
+    NoteContent = note_content(NoteMeta),
     case {note_topic(NoteMeta),
           binary:match(NoteContent, CP)}
         of
