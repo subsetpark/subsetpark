@@ -93,20 +93,23 @@ with_metadata(Notes) ->
     [with_topic(with_contents(V1)) || V1 <- Notes].
 
 with_contents(NoteMeta) ->
-    FileName = proplists:get_value('__file__', NoteMeta),
+    FileName = note_filename(NoteMeta),
     {ok, Contents} = file:read_file(FileName),
     [{contents, Contents} | NoteMeta].
 
 with_topic(NoteMeta) ->
-    FileName = proplists:get_value('__file__', NoteMeta),
+    FileName = note_filename(NoteMeta),
     BaseName = filename:basename(FileName, ".md"),
     [{topic, BaseName} | NoteMeta].
 
 note_topic(NoteMeta) ->
-    proplists:get_value(topic, NoteMeta).
+    plist:value(topic, NoteMeta).
 
 note_content(NoteMeta) ->
-    proplists:get_value(contents, NoteMeta).
+    plist:value(contents, NoteMeta).
+
+note_filename(NoteMeta) ->
+    plist:value('__file__', NoteMeta).
 
 %
 % Custom Filters
