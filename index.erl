@@ -1,7 +1,6 @@
 -module(index).
 
--export([data/1, related_notes/1, site/1,
-         truncatechars/2]).
+-export([data/1, related_notes/1, site/1]).
 
 -define(HOSTNAME, "blog.zdsmith.com").
 
@@ -17,10 +16,7 @@ data(_) ->
 
 site(Data) ->
     Notes = notes(Data),
-    Notes2 = with_contents(Notes),
-    Notes3 = with_file_tag(Notes2),
-
-    io:format("data: ~n~p~n", [Notes3]),
+    Notes2 = with_metadata(Notes),
     #{"site/index.html" =>
           {template, "templates/index.html", #{site_root => ""}},
       "site/feed.xml" =>
@@ -32,7 +28,7 @@ site(Data) ->
            #{site_root => "../"}},
       "site/notes/index.html" =>
           {template, "templates/notes.html",
-           #{site_root => "../"}},
+           #{site_root => "../", notes => Notes2}},
       "site/pages/{{page.title|slugify}}.html" =>
           {template_map, "templates/page.html",
            {page, pages(Data)}, #{site_root => "../"}},
@@ -40,8 +36,8 @@ site(Data) ->
           {template_map, "templates/post.html",
            {post, posts(Data)}, #{site_root => "../"}},
       "site/notes/{{note.topic|slugify}}.html" =>
-          {template_map, "templates/note.html", {note, Notes3},
-           #{site_root => "../", all_notes => Notes3}},
+          {template_map, "templates/note.html", {note, Notes2},
+           #{site_root => "../", all_notes => Notes2}},
       "site/assets/*.css" => {files, "assets/*.css"},
       "site/images/*.png" => {files, "images/*.png"},
       "site/images/current/*.png" =>
@@ -92,35 +88,24 @@ pages(Data) -> plist:value(pages, Data).
 
 notes(Data) -> plist:value(notes, Data).
 
-with_contents(Notes) ->
-    [with_contents_1(V1) || V1 <- Notes].
+with_metadata(Notes) ->
+    [with_topic(with_contents(V1)) || V1 <- Notes].
 
-with_contents_1(NoteMeta) ->
+with_contents(NoteMeta) ->
     FileName = proplists:get_value('__file__', NoteMeta),
     {ok, Contents} = file:read_file(FileName),
     [{contents, Contents} | NoteMeta].
 
-with_file_tag(Notes) ->
-    [with_file_tag_1(V1) || V1 <- Notes].
-
-with_file_tag_1(NoteMeta) ->
+with_topic(NoteMeta) ->
     FileName = proplists:get_value('__file__', NoteMeta),
     BaseName = filename:basename(FileName, ".md"),
     [{topic, BaseName} | NoteMeta].
-
-file_contents(Files) ->
-    FileNames = [proplists:get_value('__file__', F)
-                 || F <- Files],
-    [file_contents_1(V1) || V1 <- FileNames].
-
-file_contents_1(FileName) ->
-    {ok, Contents} = file:read_file(FileName), Contents.
 
 note_topic(NoteMeta) ->
     proplists:get_value(topic, NoteMeta).
 
 note_content(NoteMeta) ->
-    proplists:get_value(content, NoteMeta).
+    proplists:get_value(contents, NoteMeta).
 
 %
 % Custom Filters
@@ -132,16 +117,10 @@ related_notes([Topic, AllNotes]) ->
                || V1 <- AllNotes, is_related(V1, CP, Topic)],
     [[<<"<h2>">>, note_topic(NoteMeta), <<"</h2>">>,
       <<"<p>">>,
-      lpad_markdown:to_html(highlight_cp(NoteContent, CP)),
+      lpad_markdown:to_html(highlight_cp(note_content(NoteMeta),
+                                         CP)),
       <<"</p>">>]
-     || {NoteMeta, NoteContent} <- Related].
-
-truncatechars([String], N) ->
-    case size(String) of
-      Size when Size > N ->
-          [binary:part(String, 0, N), <<"...">>];
-      _ -> String
-    end.
+     || NoteMeta <- Related].
 
 %
 % Private for filters/tags

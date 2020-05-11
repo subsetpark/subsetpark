@@ -175,4 +175,15 @@ sup {
   vertical-align: super;
   font-size: smaller;
 }
+
+.oneline {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.oneline br {
+  display: none;
+}
+.oneline p {
+  display: inline;
 }

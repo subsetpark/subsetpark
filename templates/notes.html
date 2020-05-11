@@ -5,10 +5,12 @@
 {% include "jumbotron.html" %}
 
 {% for note in notes|sortasc:'topic' %}
-<p>
+
+<div class="oneline">
    <b><a href="{{site_root}}notes/{{note.topic|slugify}}.html">{{ note.topic }}</a></b>
-   {{ note|markdown_to_html|strip_p|truncatechars:40}}
-</p>
+   {{note|markdown_to_html|strip_p}}
+</div>
+
 {% endfor %}
 
 {% endblock %}
