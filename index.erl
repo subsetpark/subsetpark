@@ -13,8 +13,7 @@ data(_) ->
     #{blog => {eterm, "subsetpark.config"},
       posts => {markdown, "posts/*.md"},
       pages => {markdown, "pages/*.md"},
-      notes => {markdown, "notes/*.md"},
-      about => {markdown, "front.md"}}.
+      notes => {markdown, "notes/*.md"}}.
 
 site(Data) ->
     Notes = notes(Data),
@@ -81,13 +80,11 @@ add_post_context(Post) ->
 get_context(Data) ->
     code:add_path("src/tempo/ebin"),
     Posts = posts(Data),
-    PostContext = [add_post_context(V1) || V1 <- Posts],
-    PostContext.
+    [add_post_context(V1) || V1 <- Posts].
 
 posts(Data) ->
     Posts = plist:value(posts, Data),
-    Posts2 = [V1 || V1 <- Posts, is_post(V1)],
-    Posts2.
+    [V1 || V1 <- Posts, is_post(V1)].
 
 pages(Data) -> plist:value(pages, Data).
 
