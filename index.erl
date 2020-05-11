@@ -12,7 +12,8 @@ data(_) ->
     #{blog => {eterm, "subsetpark.config"},
       posts => {markdown, "posts/*.md"},
       pages => {markdown, "pages/*.md"},
-      notes => {markdown, "notes/*.md"}}.
+      notes => {markdown, "notes/*.md"},
+      front => {markdown, "front.md"}}.
 
 site(Data) ->
     Notes = notes(Data),
