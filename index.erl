@@ -88,7 +88,7 @@ notes(Data) ->
     plist:value(notes, Data).
 
 with_metadata(Notes) ->
-    [with_topic(with_contents(V1)) || V1 <- Notes].
+    [with_cp(with_topic(with_contents(V1))) || V1 <- Notes].
 
 with_contents(NoteMeta) ->
     FileName = note_filename(NoteMeta),
@@ -100,11 +100,19 @@ with_topic(NoteMeta) ->
     BaseName = filename:basename(FileName, ".md"),
     [{topic, BaseName} | NoteMeta].
 
+with_cp(NoteMeta) ->
+    Topic = note_topic(NoteMeta),
+    CP = binary:compile_pattern(list_to_binary(Topic)),
+    [{cp, CP} | NoteMeta].
+
 note_topic(NoteMeta) ->
     plist:value(topic, NoteMeta).
 
 note_content(NoteMeta) ->
     plist:value(contents, NoteMeta).
+
+note_cp(NoteMeta) ->
+    plist:value(cp, NoteMeta).
 
 note_filename(NoteMeta) ->
     plist:value('__file__', NoteMeta).
@@ -117,40 +125,40 @@ note_path(NoteMeta) ->
 %
 
 with_hyperlinks(MainNote, AllNotes) ->
-    lists:foldl(fun (NoteMeta, Acc) ->
-                        RelatedTopic = note_topic(NoteMeta),
-                        CP = binary:compile_pattern(list_to_binary(RelatedTopic)),
-                        case is_related(MainNote, CP, RelatedTopic) of
+    lists:foldl(fun (NoteMeta, ContentAcc) ->
+                        case is_related(MainNote, NoteMeta) of
                           true ->
-                              link_cp(Acc, CP, NoteMeta);
+                              link_to_note(ContentAcc, NoteMeta);
                           _ ->
-                              Acc
+                              ContentAcc
                         end
                 end,
                 note_content(MainNote),
                 AllNotes).
 
-related_notes([Topic, AllNotes]) ->
-    CP = binary:compile_pattern(list_to_binary(Topic)),
-    Related = [V1 || V1 <- AllNotes, is_related(V1, CP, Topic)],
+related_notes([NoteMeta, AllNotes]) ->
+    CP = note_cp(NoteMeta),
+    AllRelated = [V1 || V1 <- AllNotes, is_related(V1, NoteMeta)],
     [[<<"<h2>">>,
       <<"<a href=">>,
-      note_path(NoteMeta),
+      note_path(RelatedMeta),
       <<">">>,
-      note_topic(NoteMeta),
+      note_topic(RelatedMeta),
       <<"</a>">>,
       <<"</h2>">>,
-      lpad_markdown:to_html(highlight_cp(note_content(NoteMeta), CP))]
-     || NoteMeta <- Related].
+      lpad_markdown:to_html(highlight_cp(note_content(RelatedMeta), CP))]
+     || RelatedMeta <- AllRelated].
 
 %
 % Private for filters/tags
 %
 
-is_related(NoteMeta, CP, Topic) ->
+is_related(NoteMeta, RelatedMeta) ->
     NoteContent = note_content(NoteMeta),
-    case {note_topic(NoteMeta), binary:match(NoteContent, CP)} of
-      {Topic, _} ->
+    NoteTopic = note_topic(NoteMeta),
+    RelatedCP = note_cp(RelatedMeta),
+    case {note_topic(RelatedMeta), binary:match(NoteContent, RelatedCP)} of
+      {NoteTopic, _} ->
           false;
       {_, nomatch} ->
           false;
@@ -161,8 +169,10 @@ is_related(NoteMeta, CP, Topic) ->
 highlight_cp(NoteContent, CP) ->
     binary:replace(NoteContent, CP, <<"**">>, [global, {insert_replaced, 1}]).
 
-link_cp(NoteContent, CP, RelatedMeta) ->
+link_to_note(NoteContent, RelatedMeta) ->
+    CP = note_cp(RelatedMeta),
+    Path = note_path(RelatedMeta),
     [binary:replace(NoteContent, CP, <<"[]">>, [global, {insert_replaced, 1}]),
      <<"(">>,
-     note_path(RelatedMeta),
+     Path,
      <<")">>].

@@ -9,7 +9,7 @@
       {{ note|with_hyperlinks:all_notes|markdown_to_html }}
     </div>
   </div>
-    {% related_notes note.topic all_notes %}
+    {% related_notes note all_notes %}
 </div>
 
 {% endblock %}
