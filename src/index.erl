@@ -5,10 +5,11 @@
 -define(HOSTNAME, "blog.zdsmith.com").
 -define(ROOT, "../").
 
+-type plist() :: plist().
+
 %
 % API
 %
-
 data(_) ->
     #{blog => {eterm, "subsetpark.config"},
       posts => {markdown, "posts/*.md"},
@@ -19,14 +20,13 @@ data(_) ->
 site(Data) ->
     % Populate included BEAM files.
     true = code:add_path("_build/default/lib/tempo/ebin/"),
-
     Notes = notes(Data),
     Notes2 = with_metadata(Notes),
     #{"site/index.html" => {template, "templates/index.html", #{site_root => ""}},
       "site/feed.xml" =>
           {template,
            "templates/feeds.jinja",
-           #{site_root => "", host => ?HOSTNAME, context => get_context(Data)}},
+           #{site_root => "", host => ?HOSTNAME, context => posts_with_context(Data)}},
       "site/posts/index.html" => {template, "templates/posts.html", #{site_root => ?ROOT}},
       "site/notes/index.html" =>
           {template, "templates/notes.html", #{site_root => ?ROOT, notes => Notes2}},
@@ -49,7 +49,7 @@ site(Data) ->
 %
 % Private
 %
-
+-spec is_post(plist()) -> boolean().
 is_post(Post) ->
     case lists:keyfind("status", 1, Post) of
       {"status", "post"} ->
@@ -58,6 +58,7 @@ is_post(Post) ->
           false
     end.
 
+-spec datestr_to_822(string()) -> string().
 datestr_to_822(DateStr) ->
     {ok, DateTime} = tempo:parse(<<"%Y-%m-%d">>, list_to_binary(DateStr), datetime),
     case DateTime of
@@ -70,12 +71,14 @@ datestr_to_822(DateStr) ->
     {ok, Formatted} = tempo:format(rfc2822, DateTime, datetime),
     Formatted.
 
+-spec add_post_context(plist()) -> plist().
 add_post_context(Post) ->
     {_, Date} = lists:keyfind("date", 1, Post),
     Rfc822 = datestr_to_822(Date),
     lists:keystore("rss_date", 1, Post, {"rss_date", Rfc822}).
 
-get_context(Data) ->
+-spec posts_with_context(plist()) -> [plist()].
+posts_with_context(Data) ->
     Posts = posts(Data),
     [add_post_context(V1) || V1 <- Posts].
 
@@ -125,7 +128,7 @@ note_path(NoteMeta) ->
 %
 % Custom Filters
 %
-
+-spec with_hyperlinks(binary(), [plist()]) -> string().
 with_hyperlinks(MainNote, AllNotes) ->
     lists:foldl(fun (NoteMeta, ContentAcc) ->
                         case is_related(MainNote, NoteMeta) of
@@ -138,6 +141,7 @@ with_hyperlinks(MainNote, AllNotes) ->
                 note_content(MainNote),
                 AllNotes).
 
+-spec related_notes(list()) -> iolist().
 related_notes([NoteMeta, AllNotes]) ->
     CP = note_cp(NoteMeta),
     AllRelated = [V1 || V1 <- AllNotes, is_related(V1, NoteMeta)],
@@ -154,7 +158,7 @@ related_notes([NoteMeta, AllNotes]) ->
 %
 % Private for filters/tags
 %
-
+-spec is_related(plist(), plist()) -> boolean().
 is_related(NoteMeta, RelatedMeta) ->
     NoteContent = note_content(NoteMeta),
     NoteTopic = note_topic(NoteMeta),
@@ -168,9 +172,11 @@ is_related(NoteMeta, RelatedMeta) ->
           true
     end.
 
+-spec highlight_cp(binary(), binary:cp()) -> binary().
 highlight_cp(NoteContent, CP) ->
     binary:replace(NoteContent, CP, <<"**">>, [global, {insert_replaced, 1}]).
 
+-spec link_to_note(binary(), plist()) -> iolist().
 link_to_note(NoteContent, RelatedMeta) ->
     CP = note_cp(RelatedMeta),
     Path = note_path(RelatedMeta),
