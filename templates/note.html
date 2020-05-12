@@ -5,8 +5,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-7">
-      <h1>{{ note.topic}}</h1>
-      {{ note|markdown_to_html }}
+      <h1>{{ note.topic }}</h1>
+      {{ note|with_hyperlinks:all_notes|markdown_to_html }}
     </div>
   </div>
     {% related_notes note.topic all_notes %}
