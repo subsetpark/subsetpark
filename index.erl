@@ -17,6 +17,9 @@ data(_) ->
       front => {markdown, "front.md"}}.
 
 site(Data) ->
+    % Populate included BEAM files.
+    true = code:add_path("_build/default/lib/tempo/ebin/"),
+
     Notes = notes(Data),
     Notes2 = with_metadata(Notes),
     #{"site/index.html" => {template, "templates/index.html", #{site_root => ""}},
@@ -73,7 +76,6 @@ add_post_context(Post) ->
     lists:keystore("rss_date", 1, Post, {"rss_date", Rfc822}).
 
 get_context(Data) ->
-    code:add_path("src/tempo/ebin"),
     Posts = posts(Data),
     [add_post_context(V1) || V1 <- Posts].
 
