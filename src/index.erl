@@ -51,8 +51,8 @@ site(Data) ->
 %
 -spec is_post(plist()) -> boolean().
 is_post(Post) ->
-    case lists:keyfind("status", 1, Post) of
-      {"status", "post"} ->
+    case plist:value("status", Post) of
+      "post" ->
           true;
       _ ->
           false
@@ -60,16 +60,14 @@ is_post(Post) ->
 
 -spec datestr_to_822(string()) -> string().
 datestr_to_822(DateStr) ->
-    {ok, DateTime} = tempo:parse(<<"%Y-%m-%d">>, list_to_binary(DateStr), datetime),
-    case DateTime of
+    case tempo:parse(<<"%Y-%m-%d">>, list_to_binary(DateStr), datetime) of
       format_mismatch ->
           io:format("Can't convert date: ~p~n", [DateStr]),
           erlang:error(date_format_mismatch);
-      _ ->
-          ok
-    end,
-    {ok, Formatted} = tempo:format(rfc2822, DateTime, datetime),
-    Formatted.
+      {ok, DateTime} ->
+          {ok, Formatted} = tempo:format(rfc2822, DateTime, datetime),
+          Formatted
+    end.
 
 -spec add_post_context(plist()) -> plist().
 add_post_context(Post) ->
