@@ -27,7 +27,7 @@ site(Data) ->
           {template,
            "templates/feeds.jinja",
            #{site_root => "", host => ?HOSTNAME, context => posts_with_context(Data)}},
-      "site/posts/index.html" => {template, "templates/posts.html", #{site_root => ?ROOT}},
+      "site/posts/index.html" => {template, "templates/posts.html", #{site_root => ?ROOT, all_posts => posts(Data)}},
       "site/notes/index.html" =>
           {template, "templates/notes.html", #{site_root => ?ROOT, notes => Notes2}},
       "site/pages/{{page.title|slugify}}.html" =>
@@ -51,8 +51,10 @@ site(Data) ->
 %
 -spec is_post(plist()) -> boolean().
 is_post(Post) ->
-    case plist:value("status", Post) of
-      "post" ->
+    case {os:getenv("LPAD_DRAFT"), plist:value("status", Post)} of
+      {"true", _} ->
+          true;
+      {_, "post"} ->
           true;
       _ ->
           false

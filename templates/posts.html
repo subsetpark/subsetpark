@@ -4,11 +4,9 @@
 
 {% include "jumbotron.html" %}
 
-{% for post in posts|sortdesc:'date' %}
-{% if post.status == "post" %}
+{% for post in all_posts|sortdesc:'date' %}
 <h2><a href="{{site_root}}posts/{{post.title|slugify}}.html">{{ post.title }}</a></h2>
 <p>{{post.date}}</p>
-{% endif %}
 {% empty %}
 <center><h2>Nil.</h2></center>
 {% endfor %}
