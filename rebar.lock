@@ -1,0 +1,4 @@
+[{<<"tempo">>,
+  {git,"https://github.com/selectel/tempo.git",
+       {ref,"952166ee67bb6750d536fe5de3f0d604ccc2f5c9"}},
+  0}].

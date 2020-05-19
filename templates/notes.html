@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+{% include "jumbotron.html" %}
+
+{% for note in notes|sortasc:'topic' %}
+
+<div class="oneline">
+   <b><a href="{{site_root}}notes/{{note.topic|slugify}}.html">{{ note.topic }}</a></b>
+   {{note|markdown_to_html|strip_p}}
+</div>
+
+{% endfor %}
+
+{% endblock %}
