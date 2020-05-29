@@ -27,7 +27,8 @@ site(Data) ->
           {template,
            "templates/feeds.jinja",
            #{site_root => "", host => ?HOSTNAME, context => posts_with_context(Data)}},
-      "site/posts/index.html" => {template, "templates/posts.html", #{site_root => ?ROOT, all_posts => posts(Data)}},
+      "site/posts/index.html" =>
+          {template, "templates/posts.html", #{site_root => ?ROOT, all_posts => posts(Data)}},
       "site/notes/index.html" =>
           {template, "templates/notes.html", #{site_root => ?ROOT, notes => Notes2}},
       "site/pages/{{page.title|slugify}}.html" =>
@@ -174,13 +175,14 @@ is_related(NoteMeta, RelatedMeta) ->
 
 -spec highlight_cp(binary(), binary:cp()) -> binary().
 highlight_cp(NoteContent, CP) ->
-    binary:replace(NoteContent, CP, <<"**">>, [global, {insert_replaced, 1}]).
+    binary:replace(NoteContent, CP, <<"``">>, [global, {insert_replaced, 1}]).
 
 -spec link_to_note(binary(), plist()) -> iolist().
 link_to_note(NoteContent, RelatedMeta) ->
     CP = note_cp(RelatedMeta),
     Path = note_path(RelatedMeta),
-    [binary:replace(NoteContent, CP, <<"[]">>, [global, {insert_replaced, 1}]),
-     <<"(">>,
-     Path,
-     <<")">>].
+    Ref = integer_to_binary(erlang:unique_integer()),
+    Replacement = iolist_to_binary([<<"[][">>, Ref, <<"]">>]),
+    Replaced = binary:replace(NoteContent, CP, Replacement, [global, {insert_replaced, 1}]),
+    Href = [<<"\n[">>, Ref, <<"]:">>, Path],
+    [Replaced, Href].
