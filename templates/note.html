@@ -8,8 +8,8 @@
       <h1>{{ note.topic }}</h1>
       {{ note|with_hyperlinks:all_notes|markdown_to_html }}
     </div>
-  <hr>
   </div>
+  <hr>
     {% related_notes note all_notes %}
 </div>
 
