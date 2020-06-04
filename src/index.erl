@@ -22,6 +22,7 @@ site(Data) ->
     true = code:add_path("_build/default/lib/tempo/ebin/"),
     Notes = notes(Data),
     Notes2 = with_metadata(Notes),
+    EveryWord = every_word(Notes2),
     #{"site/index.html" => {template, "templates/index.html", #{site_root => ""}},
       "site/feed.xml" =>
           {template,
@@ -125,6 +126,28 @@ note_filename(NoteMeta) ->
 
 note_path(NoteMeta) ->
     [<<?ROOT>>, <<"notes/">>, erlydtl_filters:slugify(note_topic(NoteMeta)), <<".html">>].
+
+-define(WHITESPACE, re:compile("[ \v\n]")).
+
+every_word(NoteMeta) ->
+    {ok, CP} = ?WHITESPACE,
+    AllContents = lists:flatmap(fun (Meta) ->
+                                        Content = note_content(Meta),
+                                        re:split(Content, CP)
+                                end,
+                                NoteMeta),
+    AllContents2 = lists:map(fun (Word) ->
+                                     Stripped = string:trim(Word, both, "*()[]?!.,:"),
+                                     Lowered = string:lowercase(Stripped)
+                             end,
+                             AllContents),
+    AllContents3 = lists:filter(fun (<<>>) ->
+                                        false;
+                                    (Word) ->
+                                        nomatch == binary:match(Word, <<"http">>)
+                                end,
+                                AllContents2),
+    lists:usort(AllContents3).
 
 %
 % Custom Filters
