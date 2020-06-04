@@ -6,3 +6,6 @@ draft:
 
 clean:
 	rm -rf site/*
+
+ci:
+	./bin/lpad-gen
